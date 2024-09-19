@@ -14,14 +14,16 @@
 
 <div class="cards">
     <div class="container">
-        <div class="row" >
+        <div class="row">
             <div class="col-md-3" *ngFor="let x of departments">
-                <div class="card" >
-                    <img [src]="x.img" class="card-img-top" alt="{{x.alt}}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{x.arabicname}}</h5>
+                <a href="{{x.link}}">
+                    <div class="card">
+                        <img [src]="x.img" class="card-img-top" alt="{{x.alt}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{x.arabicname}}</h5>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

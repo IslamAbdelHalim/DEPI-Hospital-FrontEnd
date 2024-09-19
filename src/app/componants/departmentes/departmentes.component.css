@@ -44,18 +44,25 @@ label{
     text-align: right;
 }
 .col-md-3{
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .col-md-3:hover{
-  transform: scale(1.1);
+  transform: scale(1.07);
+  background-color: rgb(0, 147, 161,0.1);
 }
 .card{
     direction: rtl;
-    text-align: right;
+    text-align: center;
     margin: 5px;
     padding: 5px;
 
    
+}
+.card:img {
+  width: 100px;
+
+
+ 
 }
 
 .card-title{
