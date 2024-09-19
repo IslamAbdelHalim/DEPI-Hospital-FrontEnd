@@ -14,6 +14,8 @@ import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { AppointmentsComponent } from './componants/appointments/appointments.component';
 import { InquiriesComponent } from './componants/inquiries/inquiries.component';
 import { NewsComponent } from './componants/news/news.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { NewsComponent } from './componants/news/news.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
