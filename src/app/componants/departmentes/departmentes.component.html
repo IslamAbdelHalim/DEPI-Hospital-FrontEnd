@@ -1,5 +1,7 @@
 <div class="nav"> الرئيسية - الاقسام الطبية</div>
+
 <div class="subnav"> الاقسام الطبية</div>
+
 <div class="search">
     <div>
         <label>البحث من الاقسام</label>
@@ -8,12 +10,19 @@
         <input type="text" placeholder="اسم القسم المراد البحث عنه">
         <button>بحث</button>
     </div>
-    
 </div>
-<div class="cards">
-    <div class="card">
-        <img src="../../assets/lab.png" alt="lab" width="300px" height="auto">
-        <img src="../../assets/lab2.jpg" alt="lab2" width="300px" height="auto">
-    </div>
 
+<div class="cards">
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-3" *ngFor="let x of departments">
+                <div class="card" >
+                    <img [src]="x.img" class="card-img-top" alt="{{x.alt}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{x.arabicname}}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

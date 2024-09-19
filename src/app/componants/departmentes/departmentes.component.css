@@ -39,3 +39,27 @@ label{
     padding: auto;    
 
 }
+.cards{
+    direction: rtl;
+    text-align: right;
+}
+.col-md-3{
+  transition: 0.5s;
+}
+.col-md-3:hover{
+  transform: scale(1.1);
+}
+.card{
+    direction: rtl;
+    text-align: right;
+    margin: 5px;
+    padding: 5px;
+
+   
+}
+
+.card-title{
+  direction: rtl;
+  text-align: center;
+
+}
