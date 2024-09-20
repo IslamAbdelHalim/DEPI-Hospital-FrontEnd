@@ -1,0 +1,65 @@
+body{
+    direction: rtl;
+  text-align: right;
+
+}
+
+.nav {
+    width: auto;
+    height: 25px;
+    background-color: rgb(251, 251, 251);
+    direction: rtl;
+  text-align: right;
+  margin:auto;
+  padding: 5px 50px 5px 50px;
+
+}
+.subnav {
+    width: auto;
+    height: 20px;
+    background-color: rgb(0, 147, 161);
+    direction: rtl;
+  text-align: right;
+  margin:auto;
+  padding: 50px 50px ;
+  font-size: 23pt;
+  color: aliceblue;
+}
+
+.search{
+    direction: rtl;
+    text-align: right;
+    margin:auto;
+    padding: 50px 50px ;    
+
+}
+
+label{
+    margin:auto;
+    padding: auto;    
+
+}
+.cards{
+    direction: rtl;
+    text-align: right;
+}
+.col-md-3{
+  transition: 0.5s;
+}
+.col-md-3:hover{
+  transform: scale(1.1);
+}
+.card{
+    direction: rtl;
+    text-align: right;
+    margin: 5px;
+    padding: 5px;
+
+   
+}
+
+.card-title{
+  direction: rtl;
+  text-align: center;
+
+}

@@ -9,11 +9,13 @@ import { HomeComponent } from './componants/home/home.component';
 import { LoginComponent } from './componants/login/login.component';
 import { UserProfileComponent } from './componants/user-profile/user-profile.component';
 import { DepartmentesComponent } from './componants/departmentes/departmentes.component';
-import { EachDepartmentComponent } from './componants/each-department/each-department.component';
 import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { AppointmentsComponent } from './componants/appointments/appointments.component';
 import { InquiriesComponent } from './componants/inquiries/inquiries.component';
 import { NewsComponent } from './componants/news/news.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { EachDepartmentComponent } from './componants/each-department/each-department.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +26,17 @@ import { NewsComponent } from './componants/news/news.component';
     LoginComponent,
     UserProfileComponent,
     DepartmentesComponent,
-    EachDepartmentComponent,
     DoctorsComponent,
     AppointmentsComponent,
     InquiriesComponent,
-    NewsComponent
+    NewsComponent,
+    EachDepartmentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
