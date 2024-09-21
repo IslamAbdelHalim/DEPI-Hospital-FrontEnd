@@ -1,0 +1,89 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+.nav {
+  width: auto;
+  height: 25px;
+  background-color: rgb(251, 251, 251);
+  direction: rtl;
+  text-align: right;
+  margin: auto;
+  padding: 5px 50px 5px 50px;
+}
+.subnav {
+  width: auto;
+  height: 20px;
+  background-color: rgb(0, 147, 161);
+  direction: rtl;
+  text-align: right;
+  margin: auto;
+  padding: 50px 50px;
+  font-size: 23pt;
+  color: aliceblue;
+}
+.head,
+.bottom {
+  direction: rtl;
+  text-align: right;
+  margin: 5px;
+  font-size: 15pt;
+}
+.par-title {
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 50px;
+}
+.head img {
+  margin-top: 20px;
+  border-radius: 5px;
+  width: 555px;
+}
+
+.bottomparagraph {
+  direction: rtl;
+  text-align: right;
+  background-color: rgb(0, 147, 161);
+  margin-top: 20px;
+  padding: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+.otherdepart {
+  direction: rtl;
+  text-align: right;
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 105px;
+  margin-top: 20px;
+}
+.cards {
+  direction: rtl;
+  text-align: right;
+}
+.cards {
+  direction: rtl;
+  text-align: right;
+}
+.outsidecard {
+  transition: 0.3s;
+}
+.outsidecard:hover {
+  transform: scale(1.07);
+  background-color: rgb(0, 147, 161, 0.1);
+}
+.card {
+  direction: rtl;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+}
+.card:img {
+  width: 100px;
+}
+
+.card-title {
+  direction: rtl;
+  text-align: center;
+}

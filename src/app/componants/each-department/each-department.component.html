@@ -2,11 +2,69 @@
 
 <div class="subnav"> الاقسام الطبية</div>
 
-<div class="head">
+<div class="head" *ngIf="selectedDepartment">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <div class="headparagraph">
+                    <h5 class="par-title">{{selectedDepartment.arabicname}}</h5>
+                    <p>{{selectedDepartment.p?.p1}}</p>
+                    <p>{{selectedDepartment.p?.p2}}</p>
+                </div>
+            </div>
             <div class="col-md-4">
-              
+                <img [src]="selectedDepartment.img" alt="{{selectedDepartment.alt}}">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bottom"></div>
+<div class="container">
+    <div class="row">
+        <div class="bottomparagraph">
+            <p>{{selectedDepartment.p?.p1}}</p>
+            <p>{{selectedDepartment.p?.p2}}</p>
+            <p>{{selectedDepartment.p?.p3}}</p>
+            <ul *ngIf="selectedDepartment.p?.p3_1">
+                <li *ngFor="let item of selectedDepartment.p.p3_1">{{ item }}</li>
+            </ul>
+            <p>{{selectedDepartment.p?.p4}}</p>
+            <ul *ngIf="selectedDepartment.p?.p4_1">
+                <li *ngFor="let item of selectedDepartment.p.p4_1">{{ item }}</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="cardsheader"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <a class="linkalldeps" href="departmentes">عرض الكل</a>
+        </div>
+        <div class="col-md-9">
+            <div class="otherdepart">أقسام أخري ذات صلة</div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="cards"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let rd of remainingDepartments">
+            <div class="outsidecard">
+                <a href="{{rd.link}}">
+                    <div class="card">
+                        <img [src]="rd.img" class="card-img-top" alt="{{rd.alt}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{rd.arabicname}}</h5>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

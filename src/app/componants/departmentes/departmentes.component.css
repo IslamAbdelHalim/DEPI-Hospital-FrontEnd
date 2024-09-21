@@ -43,10 +43,10 @@ label{
     direction: rtl;
     text-align: right;
 }
-.col-md-3{
+.outsidecard{
   transition: 0.3s;
 }
-.col-md-3:hover{
+.outsidecard:hover{
   transform: scale(1.07);
   background-color: rgb(0, 147, 161,0.1);
 }
