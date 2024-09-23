@@ -1,72 +1,62 @@
-body{
-    direction: rtl;
+body {
+  direction: rtl;
   text-align: right;
-
 }
 
 .nav {
-    width: auto;
-    height: 25px;
-    background-color: rgb(251, 251, 251);
-    direction: rtl;
+  width: auto;
+  height: 25px;
+  background-color: rgb(251, 251, 251);
+  direction: rtl;
   text-align: right;
-  margin:auto;
+  margin: auto;
   padding: 5px 50px 5px 50px;
-
 }
 .subnav {
-    width: auto;
-    height: 20px;
-    background-color: rgb(0, 147, 161);
-    direction: rtl;
+  width: auto;
+  height: 20px;
+  background-color: rgb(0, 147, 161);
+  direction: rtl;
   text-align: right;
-  margin:auto;
-  padding: 50px 50px ;
+  margin: auto;
+  padding: 50px 50px;
   font-size: 23pt;
   color: aliceblue;
 }
 
-.search{
-    direction: rtl;
-    text-align: right;
-    margin:auto;
-    padding: 50px 50px ;    
-
+.search {
+  direction: rtl;
+  text-align: right;
+  margin: auto;
+  padding: 50px 50px;
 }
 
-label{
-    margin:auto;
-    padding: auto;    
-
+label {
+  margin: auto;
+  padding: auto;
 }
-.cards{
-    direction: rtl;
-    text-align: right;
+.cards {
+  direction: rtl;
+  text-align: right;
 }
-.outsidecard{
+.outsidecard {
   transition: 0.3s;
 }
-.outsidecard:hover{
+.outsidecard:hover {
   transform: scale(1.07);
-  background-color: rgb(0, 147, 161,0.1);
+  background-color: rgb(0, 147, 161, 0.1);
 }
-.card{
-    direction: rtl;
-    text-align: center;
-    margin: 5px;
-    padding: 5px;
-
-   
+.card {
+  direction: rtl;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
 }
 .card:img {
   width: 100px;
-
-
- 
 }
 
-.card-title{
+.card-title {
   direction: rtl;
   text-align: center;
-
 }

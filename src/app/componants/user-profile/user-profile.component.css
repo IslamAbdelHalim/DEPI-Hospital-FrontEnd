@@ -48,3 +48,8 @@ padding: 5px;
     margin: 10px;
     padding: 5px;
 }
+.eachappointment:hover{
+  transform: scale(1.02);
+  background-color: rgba(245, 41, 5, 0.2);
+  border-color: rgb(101, 167, 221);
+}
