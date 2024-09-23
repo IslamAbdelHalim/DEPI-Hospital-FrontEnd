@@ -1,1 +1,148 @@
-<p>user-profile works!</p>
+<div class="accountsection" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="labele">Account</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="eachlabel" for="fullname">Full Name</label>
+            </div>
+            <div class="col-md-8">
+                <input class="inputuserprofile" type="text" [value]="userdata[0].name" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="eachlabel" for="fullname">Email</label>
+            </div>
+            <div class="col-md-8">
+                <input class="inputuserprofile" type="text"  [value]="userdata[0].email" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="eachlabel" for="fullname">Date Of Birth</label>
+            </div>
+            <div class="col-md-8">
+                <input class="inputuserprofile" type="text" [value]="userdata[0].dob" readonly>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="passwordsection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="labele">Password</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="eachlabel" for="fullname">Current password</label>
+            </div>
+            <div class="col-md-8">
+                <input class="inputuserprofile" type="password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="eachlabel" for="fullname">New password</label>
+            </div>
+            <div class="col-md-8">
+                <input class="inputuserprofile" type="password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label class="eachlabel" for="fullname">Confirm new Password </label>
+            </div>
+            <div class="col-md-8">
+                <input class="inputuserprofile" type="password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <button class="updatebutton"> Update </button>
+                <button class="resetbutton"> Reset </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="appointmentsection">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="labele"> My Appointments </div>
+            </div>
+        </div>
+        <div class="eachappointment" *ngFor="let appointment of appointments">
+            <div class="row">
+                <div class="col-md-4" >
+                    <label class="eachlabel" for="fullname">Full Name</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.name" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">Email</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.email" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">Mobile</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.mobile" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">Appointment Type </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.appointmentType" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">Appointment Date </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.appointmentDate" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">Status</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.status" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">Note</label>
+                </div>
+                <div class="col-md-8">
+                    <textarea class="inputuserprofile" type="text" readonly> {{ appointment.Note }}</textarea>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
