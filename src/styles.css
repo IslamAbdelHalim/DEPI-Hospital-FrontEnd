@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #37B7C4;
+  --second-color: #09A5B0;
+  --button-color: #41B3A2;
+  --trans-color: #09A5B0;
+  --green-color: #0D7C66;
+  --background-color: #088395;
+  --text-color: #fff;
+}
+
+/*Global*/
+.link-icons {
+  color: var(--background-color);
+}
+
+
+body {
+  font-family: "Cairo", system-ui;
+}
+
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

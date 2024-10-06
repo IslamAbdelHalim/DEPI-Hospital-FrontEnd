@@ -1,0 +1,40 @@
+.links {
+  background-color: #eee;
+}
+
+fa-icon {
+  color: var(--background-color);
+}
+
+.links .list-inline-item:nth-child(3){
+  padding-right: 15px;
+  border-right: 1px solid var(--second-color);
+}
+
+.links .list-inline-item:last-child a{
+  color: var(--main-color);
+}
+.links .list-inline-item:last-child a:hover{
+  color: var(--background-color);
+}
+
+.links .auth button {
+  background-color: var(--second-color);
+  color: white;
+  margin-right: 7px;
+}
+
+headLogo a{
+  color: var(--background-color);
+}
+
+/*Make logo*/
+#logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.logo h3 {
+  color: #088395;
+  width: fit-content;
+}

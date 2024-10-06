@@ -1,1 +1,38 @@
-<p>header works!</p>
+<header>
+  <!-- social links and register  -->
+  <div class="links py-2">
+    <div class="container">
+      <div class="firstHeader d-flex align-items-center justify-content-between">
+        <ul class="m-0 p-0">
+          <li class="list-inline-item me-2"><a href="#"><fa-icon [icon]="faFacebook"></fa-icon></a> </li>
+          <li class="list-inline-item me-2"><a href="#"><fa-icon [icon]="faYoutube"></fa-icon></a> </li>
+          <li class="list-inline-item me-2"><a href="#"><fa-icon [icon]="faInstagram"></fa-icon></a> </li>
+          <li class="list-inline-item mx-2"><a href="mailto: hospital@depihospital.com"><fa-icon class="me-2" [icon]="faEnvelope1"></fa-icon><span class="d-sm-inline-block d-none">hospital&#64;depihospital.com </span></a></li>
+        </ul>
+        <div class="auth">
+          <button type="button" [routerLink]="['/login']" class="btn rounded-pill btn-sm">Login</button>
+          <button type="button" class="btn rounded-pill btn-sm">Register</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- logo and calls  -->
+  <div class="headLogo py-4 bg-light">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <div class="phone">
+          <a class="display-5 fw-bold link-icons" href="tel:+19999">
+            <fa-icon class="m-2" [icon]="faPhone"></fa-icon><span>19999</span>
+          </a>
+        </div>
+        <div class="logo d-flex align-items-center">
+          <div id="logo"><img class="me-2" src="assets/LOGO.png" alt="logo.png"> </div>
+          <h3 class="text-uppercase fw-semibold d-none d-sm-block">depi hospital</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-navbar></app-navbar>
+</header>

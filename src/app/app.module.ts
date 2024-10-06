@@ -16,6 +16,10 @@ import { NewsComponent } from './componants/news/news.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EachDepartmentComponent } from './componants/each-department/each-department.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule} from '@angular/router';
+import { NavbarComponent } from './componants/navbar/navbar.component';
+import { SliderComponent  } from './componants/slider/slider.component'
 
 @NgModule({
   declarations: [
@@ -30,13 +34,17 @@ import { EachDepartmentComponent } from './componants/each-department/each-depar
     AppointmentsComponent,
     InquiriesComponent,
     NewsComponent,
-    EachDepartmentComponent
+    EachDepartmentComponent,
+    SliderComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    RouterModule
   ],
   providers: [
     provideClientHydration()

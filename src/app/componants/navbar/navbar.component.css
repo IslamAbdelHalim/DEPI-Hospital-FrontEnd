@@ -1,0 +1,26 @@
+nav {
+  /* background-color: var(--main-color); */
+  background-color: var(--background-color)
+}
+
+nav ul.dropdown-menu {
+  background-color: var(--background-color);
+}
+
+nav ul.dropdown-menu li a.dropdown-item {
+  color: white;
+}
+
+nav ul.dropdown-menu li a:hover {
+  background-color: var(--main-color);
+}
+
+button.book,
+section button.book {
+  background-color: var(--button-color); /*or button*/
+  color: white;
+}
+
+button.book:hover {
+  color: white
+}
