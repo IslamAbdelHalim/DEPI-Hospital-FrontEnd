@@ -1,0 +1,72 @@
+section.landing {
+  height: 800px;
+}
+
+section.landing img {
+  height: 800px;
+  object-fit: cover;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: -60px;
+  display: flex;
+  z-index: 999;
+}
+
+.indicator {
+  width: 20px; 
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid var(--green-color);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-right: 3px;
+}
+
+.indicator.active {
+  background-color: var(--button-color);
+}
+
+.indicator:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  background-color: #0D7C66;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.better-life {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--text-color);
+  bottom: 10px;
+  right: 0;
+  z-index: 99999;
+  padding: 20px;
+  transform: translateX(0);
+  transition: transform 5s ease-in-out 1s;
+}
+
+
+@media (min-width: 1270px) {
+  .better-life {
+    width: 40%;
+  }
+}
+
+button.book,
+section button.book {
+  background-color: var(--button-color); /*or button*/
+  color: white;
+}
+
+button.book:hover {
+  color: white
+}

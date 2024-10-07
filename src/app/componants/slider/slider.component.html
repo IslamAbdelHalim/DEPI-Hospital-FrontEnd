@@ -1,1 +1,25 @@
-<p>slider works!</p>
+<section class="landing position-relative mb-5">
+  <div class="overlay position-absolute w-100"></div>
+  <div class="carousel slide w-100" id="slider" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let img of imgs; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img [src]="img.src" alt="img.alt" class="d-block w-100">
+      </div>
+    </div>
+    <!-- Carousal indicator -->
+    <div class="carousel-indicators my-3 d-block text-center">
+      <button type="button" *ngFor="let img of imgs; let i = index" data-bt-target="#slider" [attr.data-bs-slide-to]="i" class="indicator" [class.active]="i === 0" [attr.aria-label]="'slide ' + (i + 1)" aria-current="true"></button>
+    </div>
+  </div>
+
+  <div class="better-life position-absolute">
+    <div class="text me-md-5 text-end">
+      <h2> <span class="text-success">حياة</span> افضل</h2>
+      <p class="h5">صحتك أمانتنا. نقدم لك رعاية صحية شاملة ومتكاملة، بدءًا من التشخيص الدقيق وحتى العلاج المتخصص. صحتك
+        هدفنا الأول نقدم لك رعاية صحية عالية الجودة بفضل كادرنا الطبي المتميز وخبرته الواسعة</p>
+    </div>
+    <button type="button" class="btn book rounded-pill" [routerLink]="['/book']">
+      احجز موعدك
+    </button>
+  </div>
+</section>
