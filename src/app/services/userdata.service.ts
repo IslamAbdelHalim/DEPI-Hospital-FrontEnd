@@ -7,7 +7,7 @@ export class UserdataService {
   constructor() {}
 
   userdata = [    {
-      name: 'Hamada Ramadan Ali Mohamed Ashour',
+      name: 'حماده رمضان على محمد عاشور',
       email: 'hamada.ramadan.1996@gmail.com',
       dob: '20-4-1996',
       mobile: '01067592359',
@@ -20,36 +20,36 @@ export class UserdataService {
   appointments = [
     {
       id: 1,
-      name: 'Hamada Ramadan Ali Mohamed Ashour',
+      name: 'حماده رمضان على محمد عاشور',
       email: 'hamada.ramadan.1996@gmail.com',
       dob: '20-4-1996',
       mobile: '01067592359',
-      appointmentType: 'Radiology',
+      appointmentType: 'الاشعه',
       appointmentDate: '1-9-2024',
-      status: 'Completed',
-      Note: 'I need a reservation in the Radiology center at 7:00 PM to check my knee',
+      status: 'اكتمل',
+      Note: 'محتاج احجز الساعه 7 مساء بمركز الاشعه',
     },
     {
       id: 2,
-      name: 'Hamada Ramadan Ali Mohamed Ashour',
+      name: 'حماده رمضان على محمد عاشور',
       email: 'hamada.ramadan.1996@gmail.com',
       dob: '20-4-1996',
       mobile: '01067592359',
-      appointmentType: 'Lab',
+      appointmentType: 'المعمل',
       appointmentDate: '15-9-2024',
-      status: 'Completed',
-      Note: 'I need a reservation in the Lab at 9:00 PM to make CBC test',
+      status: 'اكتمل',
+      Note: 'محتاج احجز فى المعمل لعمل تحاليل خاصه بى الساعه 8 مساء',
     },
     {
       id: 2,
-      name: 'Hamada Ramadan Ali Mohamed Ashour',
+      name: 'حماده رمضان على محمد عاشور',
       email: 'hamada.ramadan.1996@gmail.com',
       dob: '20-4-1996',
       mobile: '01067592359',
-      appointmentType: 'orthopedic',
+      appointmentType: 'عياده العظام',
       appointmentDate: '24-9-2024',
-      status: 'Open',
-      Note: 'I need to book an appointment at the outpatient clinic at 7:00 PM with Dr. Ahmed, an orthopedic specialist.',
+      status: 'جاريه',
+      Note: 'أحتاج إلى حجز موعد في العيادة الخارجية الساعة 7 مساءً مع الدكتور أحمد، أخصائي جراحة العظام.',
     },
   ];
   getAppointments() {
