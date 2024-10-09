@@ -1,11 +1,12 @@
-body {
-}
-
-.accountsection, .passwordsection, .appointmentsection{
+.accountsection,
+.passwordsection,
+.appointmentsection {
   background-color: rgb(0, 147, 161);
-margin: 10px;
+  margin: 10px;
   padding: 20px;
   border-radius: 5px;
+  direction: rtl;
+  text-align: right;
 }
 .labele {
   color: white;
@@ -17,38 +18,39 @@ margin: 10px;
 .eachlabel {
   color: white;
   font-size: 18px;
-margin: 5px ;
-margin-left: 40%;
-padding: 5px;
+  margin: 5px;
+  margin-left: 40%;
+  padding: 5px;
 }
 .inputuserprofile {
   background-color: rgb(162, 238, 213);
-  width: 500px;
-  margin: 5px ;
+  width: 70%;
+  margin: 5px;
   margin-left: 10%;
   padding: 5px;
   color: #02000c;
 }
-.updatebutton, .resetbutton{
-    border-radius: 10px;
-    padding: 5px;
-    margin: 10px;
+.updatebutton,
+.resetbutton {
+  border-radius: 10px;
+  padding: 5px;
+  margin: 10px;
 }
-.resetbutton{
-    background-color: rgb(162, 238, 213);
+.resetbutton {
+  background-color: rgb(162, 238, 213);
 }
-.updatebutton{
-    background-color: rgb(58, 140, 207);
-    color: white;
-    margin-left: 10%;
+.updatebutton {
+  background-color: rgb(58, 140, 207);
+  color: white;
+  margin-left: 10%;
 }
-.eachappointment{
-    border: 5px solid white;
-    border-radius: 20px;
-    margin: 10px;
-    padding: 5px;
+.eachappointment {
+  border: 5px solid white;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 5px;
 }
-.eachappointment:hover{
+.eachappointment:hover {
   transform: scale(1.02);
   background-color: rgba(245, 41, 5, 0.2);
   border-color: rgb(101, 167, 221);

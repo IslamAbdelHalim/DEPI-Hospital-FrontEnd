@@ -1,13 +1,17 @@
+<!-- header -->
+<app-header></app-header>
+
+<!-- account section -->
 <div class="accountsection" >
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="labele">Account</div>
+                <div class="labele">بياناتـــــى</div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label class="eachlabel" for="fullname">Full Name</label>
+                <label class="eachlabel" for="fullname">الاسم كامل</label>
             </div>
             <div class="col-md-8">
                 <input class="inputuserprofile" type="text" [value]="userdata[0].name" readonly>
@@ -15,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label class="eachlabel" for="fullname">Email</label>
+                <label class="eachlabel" for="fullname">الاميل</label>
             </div>
             <div class="col-md-8">
                 <input class="inputuserprofile" type="text"  [value]="userdata[0].email" readonly>
@@ -23,7 +27,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label class="eachlabel" for="fullname">Date Of Birth</label>
+                <label class="eachlabel" for="fullname">تاريخ الميلاد</label>
             </div>
             <div class="col-md-8">
                 <input class="inputuserprofile" type="text" [value]="userdata[0].dob" readonly>
@@ -33,16 +37,17 @@
     </div>
 </div>
 
+<!-- password section -->
 <div class="passwordsection">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="labele">Password</div>
+                <div class="labele">تعديل الرقم السرى</div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label class="eachlabel" for="fullname">Current password</label>
+                <label class="eachlabel" for="fullname">الرقم السرى الحالى</label>
             </div>
             <div class="col-md-8">
                 <input class="inputuserprofile" type="password">
@@ -50,7 +55,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label class="eachlabel" for="fullname">New password</label>
+                <label class="eachlabel" for="fullname">الرقم السرى الجديد</label>
             </div>
             <div class="col-md-8">
                 <input class="inputuserprofile" type="password">
@@ -58,7 +63,7 @@
         </div>
         <div class="row">
             <div class="col-md-4">
-                <label class="eachlabel" for="fullname">Confirm new Password </label>
+                <label class="eachlabel" for="fullname">تاكيد الرقم السرى الجديد</label>
             </div>
             <div class="col-md-8">
                 <input class="inputuserprofile" type="password">
@@ -69,25 +74,26 @@
 
             </div>
             <div class="col-md-6">
-                <button class="updatebutton"> Update </button>
-                <button class="resetbutton"> Reset </button>
+                <button class="updatebutton"> تحديث </button>
+                <button class="resetbutton"> الغاء </button>
             </div>
         </div>
 
     </div>
 </div>
 
+<!-- appointment section -->
 <div class="appointmentsection">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="labele"> My Appointments </div>
+                <div class="labele">حجزاتـــــى</div>
             </div>
         </div>
         <div class="eachappointment" *ngFor="let appointment of appointments">
             <div class="row">
                 <div class="col-md-4" >
-                    <label class="eachlabel" for="fullname">Full Name</label>
+                    <label class="eachlabel" for="fullname">الاسم كامل</label>
                 </div>
                 <div class="col-md-8">
                     <input class="inputuserprofile" type="text" [value]="appointment.name" readonly>
@@ -95,7 +101,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">Email</label>
+                    <label class="eachlabel" for="fullname">الاميل</label>
                 </div>
                 <div class="col-md-8">
                     <input class="inputuserprofile" type="text" [value]="appointment.email" readonly>
@@ -103,7 +109,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">Mobile</label>
+                    <label class="eachlabel" for="fullname">الهاتف</label>
                 </div>
                 <div class="col-md-8">
                     <input class="inputuserprofile" type="text" [value]="appointment.mobile" readonly>
@@ -111,7 +117,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">Appointment Type </label>
+                    <label class="eachlabel" for="fullname">نوع الحجز</label>
                 </div>
                 <div class="col-md-8">
                     <input class="inputuserprofile" type="text" [value]="appointment.appointmentType" readonly>
@@ -119,7 +125,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">Appointment Date </label>
+                    <label class="eachlabel" for="fullname">تاريخ الحجز</label>
                 </div>
                 <div class="col-md-8">
                     <input class="inputuserprofile" type="text" [value]="appointment.appointmentDate" readonly>
@@ -127,7 +133,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">Status</label>
+                    <label class="eachlabel" for="fullname">حاله الحجز</label>
                 </div>
                 <div class="col-md-8">
                     <input class="inputuserprofile" type="text" [value]="appointment.status" readonly>
@@ -135,7 +141,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">Note</label>
+                    <label class="eachlabel" for="fullname">ملاحظات</label>
                 </div>
                 <div class="col-md-8">
                     <textarea class="inputuserprofile" type="text" readonly> {{ appointment.Note }}</textarea>
