@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +20,9 @@ import { EachDepartmentComponent } from './componants/each-department/each-depar
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule} from '@angular/router';
 import { NavbarComponent } from './componants/navbar/navbar.component';
-import { SliderComponent  } from './componants/slider/slider.component'
+import { SliderComponent  } from './componants/slider/slider.component';
+import { AboutComponent } from './componants/about/about.component';
+import { DoctorsPaginationComponent } from './componants/doctors-pagination/doctors-pagination.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { SliderComponent  } from './componants/slider/slider.component'
     NewsComponent,
     EachDepartmentComponent,
     SliderComponent,
-    NavbarComponent
+    NavbarComponent,
+    AboutComponent,
+    DoctorsPaginationComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,8 @@ import { SliderComponent  } from './componants/slider/slider.component'
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ],
   providers: [
     provideClientHydration()

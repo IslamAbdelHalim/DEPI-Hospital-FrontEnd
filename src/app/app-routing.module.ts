@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'departments', component:DepartmentesComponent },
   { path: 'department/:departmentLinke', component: EachDepartmentComponent } ,
-  { path: 'userprofile', component: UserProfileComponent } ,
+  { path: 'userprofile', component: UserProfileComponent },
 ];
 
 @NgModule({

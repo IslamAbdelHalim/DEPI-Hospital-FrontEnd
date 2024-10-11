@@ -1,0 +1,59 @@
+.doctors {
+  background-color: #09a5b02b;
+}
+.doctors .card {
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  height: 300px;
+  cursor: pointer;
+}
+
+.doctors .card img {
+  width: 100%;
+  height: 202px;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.4s ease-in-out;
+  object-fit: cover;
+}
+
+.card-text span {
+  /*font-size: 0.8rem;*/
+  height: 40px;
+  display: inline-block;
+}
+
+.doctors .card:hover img{
+  transform: translateY(-20px);
+}
+
+.doctors .card .card-body {
+  transform: translateY(15px);
+  transition: transform 0.4s ease-in-out;
+}
+
+.doctors .card .social {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity, transform 0.4s ease-in-out;
+  display: none;
+}
+
+.doctors .card .social ul{
+  padding-left: 0 !important;
+}
+
+.doctors .card:hover .social{
+  opacity: 1;
+  transform: translateY(-5px);
+  display: block;
+  margin-top: 10px !important;
+}
+.doctors .card:hover .card-body{
+  transform: translateY(-25px);
+}
+
+.doctors .card .social ul fa-icon{
+  color: #088395;
+}
