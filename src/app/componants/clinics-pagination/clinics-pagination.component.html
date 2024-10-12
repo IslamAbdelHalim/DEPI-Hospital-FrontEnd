@@ -1,0 +1,14 @@
+<section class="clinics">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between py-3 mb-4">
+      <a href="#" class="link-offset-2 link-success link-underline-opacity-25 link-underline-opacity-100-hover">عرض الكل</a>
+      <h3>العيادات</h3>
+    </div>
+    <div class="page d-flex align-items-center justify-content-between my-4">
+      <div *ngFor="let clinic of clinics | paginate: {itemsPerPage: 3, currentPage: p, totalItems: totalItems}">
+        <app-clinic  [clinic]="clinic.name" [img]="clinic.picture"></app-clinic>
+      </div>
+    </div>
+    <pagination-controls (pageChange)="onPageChange($event)" class="d-flex align-items-center justify-content-center"></pagination-controls>
+  </div>
+</section>

@@ -23,6 +23,8 @@ import { NavbarComponent } from './componants/navbar/navbar.component';
 import { SliderComponent  } from './componants/slider/slider.component';
 import { AboutComponent } from './componants/about/about.component';
 import { DoctorsPaginationComponent } from './componants/doctors-pagination/doctors-pagination.component';
+import { ClinicsPaginationComponent } from './componants/clinics-pagination/clinics-pagination.component';
+import { ClinicComponent } from './componants/clinic/clinic.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { DoctorsPaginationComponent } from './componants/doctors-pagination/doct
     NavbarComponent,
     AboutComponent,
     DoctorsPaginationComponent,
+    ClinicsPaginationComponent,
+    ClinicComponent,
   ],
   imports: [
     BrowserModule,
