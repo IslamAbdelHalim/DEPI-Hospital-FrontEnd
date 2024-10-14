@@ -1,0 +1,20 @@
+<header class="p-5 mb-5" dir="rtl">
+  <h1 class="container">عياداتنا</h1>
+</header>
+
+<form class="search container mb-5" dir="rtl" (ngSubmit)="search()">
+  <label class="form-label h5" for="search">ابحث عن عياداتك</label>
+  <div class="d-flex">
+    <input type="text" id="search" class="form-control" [(ngModel)]="name" name="name">
+    <button type="button" class="btn" (click)="search()">بحث</button>
+  </div>
+</form>
+
+<div class="container">
+  <div class="row row-cols-3 g-5">
+    <div *ngFor="let clinic of clinics | paginate: {itemsPerPage: itemsPerPage, currentPage: p, totalItems: totalItems}" class="col">
+      <app-clinic  [clinic]="clinic.name" [img]="clinic.picture"></app-clinic>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p=$event" class="d-flex align-items-center justify-content-center my-5"></pagination-controls>
+</div>

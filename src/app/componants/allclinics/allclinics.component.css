@@ -1,0 +1,23 @@
+header {
+  background-image: linear-gradient(90deg, #0093A1, #00363B);
+  color: #eee;
+}
+
+.search div {
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  position: relative;
+}
+
+.search input{
+  border: 1px solid #0093A1;
+}
+
+.search .btn {
+  background-color: #0093A1;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  left: 1px;
+}

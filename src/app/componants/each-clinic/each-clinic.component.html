@@ -1,0 +1,31 @@
+<div class="container my-5" *ngIf="clinic">
+  <div class="content d-flex align-content-start justify-content-between">
+    <div class="image">
+      <img [src]="'assets/clinics/' + clinic.picture + '.jpg'" [alt]="clinic.picture" class="img-fluid rounded">
+    </div>
+    <div class="info p-3 w-75" dir="rtl">
+      <h3 class="fw-bolder">{{ clinic.name }}</h3>
+      <p class="py-2">{{ clinic.description}}</p>
+      <div class="services p-3">
+        <h4>خدامتنا</h4>
+        <ul>
+          <li *ngFor="let serv of clinic.medicalExaminations" class="py-1">
+            {{ serv}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="doctors my-4" dir="rtl">
+    <h3>دكاترة القسم</h3>
+    <div class="docs d-flex">
+      <div class="doc card" *ngFor="let doctor of doctors">
+        <img [src]="'assets/doctors/doctor-1.jpg'" alt="profile image">
+        <div class="card-body">
+          <h5 class="card-title">{{doctor.name}}</h5>
+          <p class="card-text">{{doctor.education}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ClinicsService} from "../../services/clinics.service";
 import {Clinic} from "../../models/clinic";
 
@@ -10,25 +10,24 @@ import {Clinic} from "../../models/clinic";
 export class ClinicsPaginationComponent implements OnInit {
   clinics: Clinic[] = [];
   p: number = 1;
-  limit: number = 16;
-  totalItems: number = 16;
+  itemsPerPage: number = 3
+  totalItems: number = 18;
 
-  constructor(private clinicsService: ClinicsService) { }
+  constructor(private clinicsService: ClinicsService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.getClinics(this.p, this.limit);
+    this.getClinics();
   }
 
-  getClinics(page: number, limit: number) {
-    this.clinicsService.getClinics(page, limit).subscribe(response => {
-      this.clinics = response.clinics;
-      this.totalItems = this.clinics.length;
-    });
+  getClinics() {
+    this.clinicsService.getClinics().subscribe((res) => {
+      this.clinics = res.clinics;
+      this.cdr.detectChanges();
+    })
   }
 
-  onPageChange(page: number) {
-    this.p = page;
-    this.getClinics(this.p, this.limit);
-    console.log(this.p);
+  onPageChange(event: number) {
+    this.p = event;
+    this.getClinics()
   }
 }

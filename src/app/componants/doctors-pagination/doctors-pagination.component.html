@@ -8,7 +8,7 @@
     <ul class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 p-5">
       <li *ngFor="let item of doctorsInDB | paginate: {itemsPerPage: 4, currentPage: p, totalItems: 20}" class="col">
         <div class="card text-center">
-          <img [src]="'assets/doctors/doctor-1.jpg'" alt="{{item.name}}" class="card-img-top img-fluid">
+          <img [src]="'assets/doctors/' + item.profile_image + '-min.jpg'" alt="{{item.name}}" class="card-img-top img-fluid">
           <div class="card-body py-0 px-1">
             <h6 class="card-title mb-0">د. {{ item.name}}</h6>
             <div class="card-text w-100">

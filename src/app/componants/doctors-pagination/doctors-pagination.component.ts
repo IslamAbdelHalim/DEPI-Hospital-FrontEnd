@@ -22,7 +22,6 @@ export class DoctorsPaginationComponent implements OnInit {
   }
 
   getDocs(page: number, limit: number) {
-    console.log(page, limit)
     this.doctorsService.getDoctors(page - 1, limit).subscribe(response => {this.doctorsInDB = response.doctors;});
   }
   pageChanged(page: number) {
