@@ -26,6 +26,7 @@ import { DoctorsPaginationComponent } from './componants/doctors-pagination/doct
 import { ClinicsPaginationComponent } from './componants/clinics-pagination/clinics-pagination.component';
 import { ClinicComponent } from './componants/clinic/clinic.component';
 import { AllclinicsComponent } from './componants/allclinics/allclinics.component';
+import { SignupComponent } from './componants/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AllclinicsComponent } from './componants/allclinics/allclinics.componen
     ClinicsPaginationComponent,
     ClinicComponent,
     AllclinicsComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
