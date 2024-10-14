@@ -25,6 +25,7 @@ import { AboutComponent } from './componants/about/about.component';
 import { DoctorsPaginationComponent } from './componants/doctors-pagination/doctors-pagination.component';
 import { ClinicsPaginationComponent } from './componants/clinics-pagination/clinics-pagination.component';
 import { ClinicComponent } from './componants/clinic/clinic.component';
+import { SignupComponent } from './componants/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ClinicComponent } from './componants/clinic/clinic.component';
     DoctorsPaginationComponent,
     ClinicsPaginationComponent,
     ClinicComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,

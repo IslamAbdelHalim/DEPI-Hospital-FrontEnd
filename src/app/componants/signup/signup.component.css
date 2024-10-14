@@ -8,15 +8,15 @@ body {
 .block1 {
   height: 100%;
   width: 100%;
-  background-image: url(../../../../public/assets/login/Login.jpg);
+  background-image: url(../../../../public/assets/signup/Login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .overlay {
   width: 400px !important;
-  height: 450px;
-  background-color: #ffffff;
+  height: 550px;
+  background-color: white;
   border-radius: 30px;
 }
 
@@ -29,6 +29,7 @@ body {
   font-weight: bold;
   font-size: 20px;
   background-color: #09A5B0 !important;
+
 }
 
 .Ncol {
@@ -47,6 +48,20 @@ label {
   color: white !important;
   font-weight: bold !important;
   font-size: 22px !important;
+}
+
+.term {
+  width: 260px !important;
+  font-size: 7.5px;
+}
+
+.term a {
+  color: #061953;
+}
+
+.inpDate {
+  width: 80px !important;
+  border: 1px solid #09A5B0 !important;
 }
 
 /* Mobile adjustments */
