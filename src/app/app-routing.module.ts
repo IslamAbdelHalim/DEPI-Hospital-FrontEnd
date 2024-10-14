@@ -8,6 +8,7 @@ import {LoginComponent} from "./componants/login/login.component";
 import { AllclinicsComponent } from './componants/allclinics/allclinics.component';
 import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { SignupComponent } from './componants/signup/signup.component';
+import { EachClinicComponent } from './componants/each-clinic/each-clinic.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'departments', component:DepartmentesComponent },
   { path: 'department/:departmentLinke', component: EachDepartmentComponent } ,
   { path: 'allclinics', component: AllclinicsComponent},
+  { path: 'allclinics/:id', component: EachClinicComponent},
   { path: 'userprofile', component: UserProfileComponent },
   { path: 'doctors', component:DoctorsComponent },
 ];

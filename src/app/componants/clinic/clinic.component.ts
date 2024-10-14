@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-clinic',
@@ -8,4 +9,7 @@ import { Component, Input } from '@angular/core';
 export class ClinicComponent {
   @Input() clinic : string | undefined;
   @Input() img: string | undefined;
+  @Input() id: string | undefined;
+
+  constructor(private router: Router){}
 }

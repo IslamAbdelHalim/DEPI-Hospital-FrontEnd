@@ -21,6 +21,10 @@ export class ClinicsService {
     }
   }
 
+  getClinic(id: string){
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
   private fetchData(): Observable<any> {
     return this.http.get<Clinic[]>(`${this.apiUrl}`)
   }

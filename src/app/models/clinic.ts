@@ -6,5 +6,5 @@ export interface Clinic {
   picture: string;
   medicalExaminations: string;
   _id: string,
-  doctors?: [Doctor]
+  doctors: [Doctor]
 }

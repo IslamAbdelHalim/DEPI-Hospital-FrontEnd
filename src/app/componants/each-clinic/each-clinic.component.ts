@@ -10,8 +10,9 @@ import { Doctor} from "../../models/doctor";
   styleUrl: './each-clinic.component.css'
 })
 export class EachClinicComponent implements OnInit{
-  clinic : Clinic | null = null;
+  clinic : Clinic | undefined;
   doctors : Doctor[] = [];
+  services: string[] = [];
 
   constructor(
     private router: Router,
@@ -26,10 +27,9 @@ export class EachClinicComponent implements OnInit{
   }
 
   getClinic(id: string): any{
-    this.clinicsService.getClinic(id).subscribe(response => {
+    this.clinicsService.getClinic(id).subscribe((response: any) => {
       this.clinic = response.clinic[0];
       this.doctors = this.clinic!.doctors;
-      console.log(this.clinic)
-    })
+    });
   }
 }

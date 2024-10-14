@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { ClinicsService } from '../../services/clinics.service';
 import { Clinic } from '../../models/clinic';
@@ -16,7 +17,7 @@ export class AllclinicsComponent implements OnInit{
   totalItems: number = 18;
   name: string = '';
 
-  constructor(private clinicService: ClinicsService) {}
+  constructor(private clinicService: ClinicsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getClinics();
