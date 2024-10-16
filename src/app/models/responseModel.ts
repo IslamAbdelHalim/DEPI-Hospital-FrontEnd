@@ -5,7 +5,8 @@ export interface ResponseModel {
     user: {
       username: string,
       email: string,
-      nameSlugs: string
+      nameSlugs: string,
+      _id: string
     }
   }
 }

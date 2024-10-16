@@ -9,10 +9,21 @@
           <li class="list-inline-item me-2"><a href="#"><fa-icon [icon]="faInstagram"></fa-icon></a> </li>
           <li class="list-inline-item mx-2"><a href="mailto: hospital@depihospital.com"><fa-icon class="me-2" [icon]="faEnvelope1"></fa-icon><span class="d-sm-inline-block d-none">hospital&#64;depihospital.com </span></a></li>
         </ul>
-        <div class="auth">
+        <div class="auth" *ngIf="!isLoggedIn; else UserLogin">
           <button type="button" [routerLink]="['auth/login']" class="btn rounded-pill btn-sm">Login</button>
           <button type="button" [routerLink]="['auth/signup']" class="btn rounded-pill btn-sm">signup</button>
         </div>
+        <ng-template #UserLogin>
+          <div class="user position-relative">
+            <div class="user-icon rounded bg-green" (click)="toggle()">
+              <fa-icon [icon]="faUser"></fa-icon>
+            </div>
+            <ul class="list-group position-absolute userList end-0 pe-0" dir="rtl" *ngIf="open">
+              <li class="list-group-item" [routerLink]="['/user/' + id]">الصفحة الشخصية</li>
+              <li class="list-group-item" (click)="logout()">تسجيل خروج</li>
+            </ul>
+          </div>
+        </ng-template>
       </div>
     </div>
   </div>

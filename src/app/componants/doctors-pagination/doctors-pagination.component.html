@@ -1,12 +1,12 @@
 <section class="doctors my-5 py-3">
   <div class="container">
     <div class="header d-flex align-items-center justify-content-between my-4">
-      <a href="#" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">عرض الكل</a>
+      <a href="./doctors" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">عرض الكل</a>
       <h3>أطباء متخصصون</h3>
     </div>
 
     <ul class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 p-5">
-      <li *ngFor="let item of doctorsInDB | paginate: {itemsPerPage: 4, currentPage: p, totalItems: 20}" class="col">
+      <li *ngFor="let item of doctorsInDB | paginate: {id: 'doctor',itemsPerPage: 4, currentPage: page, totalItems: total}" class="col">
         <div class="card text-center">
           <img [src]="'assets/doctors/' + item.profile_image + '-min.jpg'" alt="{{item.name}}" class="card-img-top img-fluid">
           <div class="card-body py-0 px-1">
@@ -25,6 +25,6 @@
         </div>
       </li>
     </ul>
-    <pagination-controls (pageChange)="pageChanged($event)" class="d-flex align-items-center justify-content-center"></pagination-controls>
+    <pagination-controls (pageChange)="pageChanged($event)" class="d-flex align-items-center justify-content-center" id="doctor"></pagination-controls>
   </div>
 </section>

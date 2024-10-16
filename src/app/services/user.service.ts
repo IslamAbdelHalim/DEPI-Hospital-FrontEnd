@@ -8,16 +8,20 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class UserService {
 
-  private apiURL = 'http://127.0.0.1:5000/auth/signup'
+  private apiURL = 'http://127.0.0.1:5000'
   constructor(private http: HttpClient) { }
 
   register(body: {}): Observable<ResponseModel> {
-    return this.http.post<ResponseModel>(`${this.apiURL}`, body);
+    return this.http.post<ResponseModel>(`${this.apiURL}/auth/signup`, body);
   }
 
-  getUser(id: string) {
+  login(body: {}): Observable<ResponseModel> {
+    return this.http.post<ResponseModel>(`${this.apiURL}/auth/login`, body);
+  }
+
+  getUser(id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = { Authorization: `Bearer ${token}` };
-    return this.http.get(`${this.apiURL}/${id}`, { headers });
+    return this.http.get(`${this.apiURL}/user/${id}`, { headers });
   }
 }

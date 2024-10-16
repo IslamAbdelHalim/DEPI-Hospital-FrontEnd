@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { DoctorsService} from "../../services/doctors.service";
 import {faFacebook, faYoutube, faTelegram} from "@fortawesome/free-brands-svg-icons";
+import { error } from 'console';
 
 @Component({
   selector: 'app-doctors-pagination',
@@ -12,20 +13,29 @@ export class DoctorsPaginationComponent implements OnInit {
   protected readonly faFacebook = faFacebook;
   protected readonly faTelegram = faTelegram;
 
+  @Output() dataLoaded: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   doctorsInDB: any;
-  p: number = 1;
-  limit: number = 20;
+  page: number = 1;
+  total: any;
   constructor(private doctorsService: DoctorsService) { }
 
   ngOnInit() {
-    this.getDocs(this.p, this.limit);
+    this.getDocs();
   }
 
-  getDocs(page: number, limit: number) {
-    this.doctorsService.getDoctors(page - 1, limit).subscribe(response => {this.doctorsInDB = response.doctors;});
+  getDocs() {
+    this.doctorsService.getDoctors().subscribe(
+    (response )=> {
+      this.doctorsInDB = response.doctors;
+      this.total = this.doctorsInDB.length;
+      this.dataLoaded.emit(true);
+    }, (error) => {
+      console.log('error fetching data');
+      this.dataLoaded.emit(false)
+    });
   }
-  pageChanged(page: number) {
-    this.p = page;
-    this.getDocs(page, this.limit);
+  pageChanged(event: any) {
+    this.page = event;
   }
 }

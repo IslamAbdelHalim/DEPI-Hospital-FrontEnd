@@ -11,7 +11,7 @@
                 <label class="eachlabel" for="fullname">الاسم كامل</label>
             </div>
             <div class="col-md-8">
-                <input class="inputuserprofile" type="text" [value]="userdata[0].name" readonly>
+                <input class="inputuserprofile" type="text" [value]="userData.username" readonly>
             </div>
         </div>
         <div class="row">
@@ -19,7 +19,7 @@
                 <label class="eachlabel" for="fullname">الاميل</label>
             </div>
             <div class="col-md-8">
-                <input class="inputuserprofile" type="text"  [value]="userdata[0].email" readonly>
+                <input class="inputuserprofile" type="text"  [value]="userData.email" readonly>
             </div>
         </div>
         <div class="row">
@@ -27,7 +27,7 @@
                 <label class="eachlabel" for="fullname">تاريخ الميلاد</label>
             </div>
             <div class="col-md-8">
-                <input class="inputuserprofile" type="text" [value]="userdata[0].dob" readonly>
+                <input class="inputuserprofile" type="text" [value]="userData.birthday" readonly>
             </div>
         </div>
 
@@ -87,7 +87,7 @@
                 <div class="labele">حجزاتـــــى</div>
             </div>
         </div>
-        <div class="eachappointment" *ngFor="let appointment of appointments">
+        <div class="eachappointment" *ngFor="let appointment of bookings">
             <div class="row">
                 <div class="col-md-4" >
                     <label class="eachlabel" for="fullname">الاسم كامل</label>

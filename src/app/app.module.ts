@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CommonModule } from '@angular/common'
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './componants/header/header.component';
@@ -29,6 +29,7 @@ import { ClinicComponent } from './componants/clinic/clinic.component';
 import { AllclinicsComponent } from './componants/allclinics/allclinics.component';
 import { SignupComponent } from './componants/signup/signup.component';
 import { EachClinicComponent } from './componants/each-clinic/each-clinic.component';
+import { BookingComponent } from './componants/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { EachClinicComponent } from './componants/each-clinic/each-clinic.compon
     ClinicComponent,
     AllclinicsComponent,
     SignupComponent,
-    EachClinicComponent
+    EachClinicComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +64,8 @@ import { EachClinicComponent } from './componants/each-clinic/each-clinic.compon
     FontAwesomeModule,
     RouterModule,
     NgxPaginationModule,
-    CommonModule
+    CommonModule,
+    NgxSpinnerModule
   ],
   providers: [
     provideClientHydration()

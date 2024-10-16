@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { ResponseModel } from '../../models/responseModel';
 
 @Component({
   selector: 'app-user-profile',
@@ -18,6 +19,11 @@ export class UserProfileComponent implements OnInit{
   }
 
   getUser() {
-    console.log(this.router.url);
+    const id = this.router.url.split('/')[2];
+    this.userServices.getUser(id).subscribe((res) => {
+      this.userData = res.data.user;
+      this.bookings = res.data.user.bookings;
+      console.log(this.userData)
+    })
   }
 }

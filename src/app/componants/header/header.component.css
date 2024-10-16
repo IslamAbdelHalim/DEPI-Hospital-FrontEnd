@@ -38,3 +38,42 @@ headLogo a{
   color: #088395;
   width: fit-content;
 }
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #088395;
+  text-align: center;
+  cursor: pointer;
+}
+
+.userList {
+  width: 220px;
+}
+
+.userList li {
+  position: relative;
+  cursor: pointer;
+  z-index: 22;
+}
+
+.userList li::after {
+  content: '';
+  width: 0;
+  height: 100%;
+  background-color: var(--background-color);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 0.5s;
+  z-index: -1;
+}
+
+.userList li:hover{
+  color: white;
+}
+
+.userList li:hover::after{
+  width: 100%;
+  color: white
+}

@@ -9,8 +9,8 @@ export class DoctorsService {
   apiUrl = 'http://127.0.0.1:5000/api/doctors';
   constructor(private http: HttpClient) { }
 
-  getDoctors(p: number, limit: number) : Observable<any> {
-    return this.http.get(`${this.apiUrl}?page=${p}&limit=${limit}`)
+  getDoctors() : Observable<any> {
+    return this.http.get(`${this.apiUrl}`);
   }
 
 }

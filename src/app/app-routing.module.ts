@@ -9,6 +9,7 @@ import { AllclinicsComponent } from './componants/allclinics/allclinics.componen
 import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { SignupComponent } from './componants/signup/signup.component';
 import { EachClinicComponent } from './componants/each-clinic/each-clinic.component';
+import { BookingComponent } from './componants/booking/booking.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,8 +19,9 @@ const routes: Routes = [
   { path: 'department/:departmentLinke', component: EachDepartmentComponent } ,
   { path: 'allclinics', component: AllclinicsComponent},
   { path: 'allclinics/:id', component: EachClinicComponent},
-  { path: 'user/:name', component: UserProfileComponent },
+  { path: 'user/:id', component: UserProfileComponent },
   { path: 'doctors', component:DoctorsComponent },
+  { path: 'booking', component: BookingComponent}
 ];
 
 @NgModule({

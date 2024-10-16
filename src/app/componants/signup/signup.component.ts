@@ -28,15 +28,16 @@ export class SignupComponent {
       email: this.email,
       password: this.password,
       passwordConfirm: this.passwordConfirm,
-      birthday: this.birthday,
+      birthday: this.birthday ? new Date(this.birthday) : undefined
     }
 
     this.userService.register(body).subscribe((res: ResponseModel) => {
-      const slugName = res.data.user.nameSlugs;
+      const id = res.data.user._id;
       const token = res.token;
       localStorage.setItem('token', token)
+      localStorage.setItem('id', id)
 
-      this.router.navigate(['/user', slugName])
+      this.router.navigate(['/user', id])
     }, 
     err => {
       if(err.error.message.includes('duplicate')) {
