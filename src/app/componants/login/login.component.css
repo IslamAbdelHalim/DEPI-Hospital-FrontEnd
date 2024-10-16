@@ -1,9 +1,4 @@
-/* body */
 
-body {
-  font-family: "Cairo", system-ui;
-  height: 800px;
-}
 
 .block1 {
   height: 100%;
@@ -11,6 +6,10 @@ body {
   background-image: url(../../../../public/assets/login/Login.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.row {
+  margin: 90px 0;
 }
 
 .overlay {

@@ -8,51 +8,61 @@
         <div class="tab-content mt-3" id="myTabContent">
           <ul class="nav nav-tabs d-flex justify-content-around">
             <li class="nav-item">
-              <a href="./login" class="nav-link Ncol" data-bs-toggle="tab" >Log In</a>
+              <a [routerLink]="['/auth/login']" class="nav-link Ncol" data-bs-toggle="tab" >Log In</a>
             </li>
             <li class="nav-item">
-              <a href="./signup" class="nav-link active col" data-bs-toggle="tab" >Sign Up</a>
+              <a [routerLink]="['/auth/signup']" class="nav-link active col" data-bs-toggle="tab" >Sign Up</a>
             </li>
           </ul>
 
           <!-- SIGNUP -->
           <div id="login" class="tab-pane fade show active">
-            <form>
+            <form (ngSubmit)="submit()" #signupForm="ngForm">
               <div class="form-group mt-2">
                 <label class="mb-2" for="username">Full Name</label>
-                <input type="text" class="form-control text-center" id="username" placeholder="FullName" required />
+                <input type="text" class="form-control text-center" id="username" placeholder="FullName" required name="username" [(ngModel)]="username"/>
               </div>
 
               <div class="form-group mt-2">
-                <label class="mb-2" for="username">Email address or phone number</label>
-                <input type="password" class="form-control text-center" id="username" placeholder="EmailName@gmail.com"
+                <label class="mb-2" for="email">Email address</label>
+                <input type="email" class="form-control text-center" id="email" placeholder="EmailName@gmail.com"
+                name="email" [(ngModel)]="email"
                   required />
+                <p class="text-center text-danger" [ngClass]="{'d-none': !errMail}">This Email is already register</p>
               </div>
 
               <div class="form-group mt-2">
-                <label class="mb-2" for="password">New Password</label>
+                <label class="mb-2" for="password">Password</label>
                 <input type="password" class="form-control text-center" id="password" placeholder="New Password"
+                name="password"[(ngModel)]="password"
                   required />
+                  <p class="text-center text-danger" *ngIf="errPass">Password myst be at least 6 character</p>
               </div>
 
               <div class="form-group mt-2">
-                <label class="mb-2" for="date">Date of birthday</label>
-                <div class="d-flex justify-content-between">
-                  <input type="text" class="inpDate form-control text-center" id="day" placeholder="Day" required />
-                  <input type="text" class="inpDate form-control text-center" id="month" placeholder="Month" required />
-                  <input type="text" class="inpDate form-control text-center" id="year" placeholder="Year" required />
-                </div>
+                <label class="mb-2" for="passwordConfirm"> Confirm Password</label>
+                <input type="password" class="form-control text-center" id="passwordConfirm" placeholder="New Password"
+                name="passwordConfirm"[(ngModel)]="passwordConfirm"
+                  required />
+                <p class="text-center text-danger" *ngIf="errPassConfirm">Password are not the same</p>
               </div>
 
-              <div class="form-group mt-2 d-flex justify-content-center align-items-center text-center">
-                <p class="term col-12">
+              <div class="form-date">
+                <label class="form-label" for="birthday">Date of Birthday</label>
+                <input type="date" id="birthday" class="form-control" name="birthday" [(ngModel)]="birthday">
+              </div>
+
+              <div class="form-check mt-4 d-flex justify-content-center align-items-center text-center">
+                <input type="checkbox" required class="form-check-input me-3" value="" id="check">
+                <label class="term col-12 form-check-label" for="check">
                   By clicking Sign Up, you agree to our
                   <a href="#">Terms</a>, <a href="#"> Privacy Policy</a> and
                   <a href="#">Cookies Policy</a>. you may receive SMS
                   notification from us and can opt out at any time.
-                </p>
+                </label>
               </div>
-              <button type="submit" class="col-12 btn btn-primary mt-4 buSub">
+
+              <button [disabled]="!signupForm.valid" type="submit" class="col-12 btn btn-primary mt-4 buSub">
                 Sign Up
               </button>
             </form>

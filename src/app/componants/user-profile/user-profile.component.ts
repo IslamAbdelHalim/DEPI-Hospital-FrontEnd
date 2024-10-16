@@ -1,30 +1,23 @@
-import { Component } from '@angular/core';
-import { UserdataService } from '../../services/userdata.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
 })
-export class UserProfileComponent {
-  userdata: any[]= [];
-  appointments: any[]= [];
+export class UserProfileComponent implements OnInit{
+  userData: any = {};
+  bookings: any = {};
 
-  constructor(
-    private ud: UserdataService,
-  ) {}
+  constructor(private userServices: UserService, private router: Router) {};
 
   ngOnInit(): void {
-    this.getUserData();
-    this.getAppointments();
+    this.getUser();
   }
 
-  getUserData(){
-    this.userdata = this.ud.getUserData();
+  getUser() {
+    console.log(this.router.url);
   }
-
-  getAppointments(){
-    this.appointments = this.ud.getAppointments();
-  }
-
 }

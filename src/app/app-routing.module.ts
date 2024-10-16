@@ -12,13 +12,13 @@ import { EachClinicComponent } from './componants/each-clinic/each-clinic.compon
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'auth/login', component: LoginComponent },
+  { path: 'auth/signup', component: SignupComponent },
   { path: 'departments', component:DepartmentesComponent },
   { path: 'department/:departmentLinke', component: EachDepartmentComponent } ,
   { path: 'allclinics', component: AllclinicsComponent},
   { path: 'allclinics/:id', component: EachClinicComponent},
-  { path: 'userprofile', component: UserProfileComponent },
+  { path: 'user/:name', component: UserProfileComponent },
   { path: 'doctors', component:DoctorsComponent },
 ];
 
