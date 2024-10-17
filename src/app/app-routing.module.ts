@@ -10,6 +10,11 @@ import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { SignupComponent } from './componants/signup/signup.component';
 import { EachClinicComponent } from './componants/each-clinic/each-clinic.component';
 import { BookingComponent } from './componants/booking/booking.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticleHairComponent } from './article-hair/article-hair.component';
+import { ArticleNoseComponent } from './article-nose/article-nose.component';
+import { ArticlePressureComponent } from './article-pressure/article-pressure.component';
+import { InquiriesComponent } from './componants/inquiries/inquiries.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +26,12 @@ const routes: Routes = [
   { path: 'allclinics/:id', component: EachClinicComponent},
   { path: 'user/:id', component: UserProfileComponent },
   { path: 'doctors', component:DoctorsComponent },
-  { path: 'booking', component: BookingComponent}
+  { path: 'booking', component: BookingComponent},
+  { path: 'article',  component: ArticleComponent},
+  { path: 'article-hair', component: ArticleHairComponent},
+  { path: 'article-nose', component: ArticleNoseComponent},
+  { path: 'article-pressure', component: ArticlePressureComponent},
+  { path: 'inquiries', component: InquiriesComponent},
 ];
 
 @NgModule({

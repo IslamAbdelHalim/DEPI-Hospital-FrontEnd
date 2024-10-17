@@ -1,0 +1,171 @@
+
+/* Sidebar styling */
+.sidebar {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar h4 {
+    font-size: 20px;
+    color: #00a9a6;
+    border-bottom: 2px solid #00a9a6;
+    padding-bottom: 5px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #006666;
+  }
+  
+  /* Grid content for articles */
+  
+  
+  
+  
+  /* style of main article */
+  .article-grid {
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+  }
+  
+  .article-grid a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+  
+  }
+  .article-grid a:hover{
+    color: #006666;
+  }
+  
+  .article-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .toto {
+    position: relative;
+  }
+  
+  
+  
+  /* style of  small articles */
+  .article-type {
+    background-color: #e3f2fd;
+    display: flex;
+    flex-direction: row; /* الصورة والنص بجانب بعضهما */
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    height: auto;
+    gap: 10px;
+  }
+  
+  .photo {
+    flex-shrink: 0;
+    width: 250px; /* عرض الصورة ثابت في الشاشات الكبيرة */
+    height: 150px; /* ارتفاع ثابت للصورة */
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+    object-fit: cover;
+  }
+  
+  .artical-body {
+    font-size: 18px;
+    text-align: right;
+    padding: 10px;
+    max-width: calc(100% - 260px); /* لضمان أن النص يأخذ المساحة المتبقية بجانب الصورة */
+    line-height: 22px;
+    word-wrap: break-word;
+    overflow: hidden;
+  }
+  
+  .article-type a {
+    
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s ease;
+  }
+  
+  .article-type a:hover {
+    color: #006666;
+  }
+  
+  /* تحسين استجابة التنسيق للشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .article-type {
+      flex-direction: column; /* الصورة فوق النص في الشاشات الصغيرة */
+      align-items: center;
+    }
+  
+    .photo {
+      width: 100%; /* الصورة تأخذ العرض الكامل */
+      height: auto; /* تجعل ارتفاع الصورة يتكيف تلقائيًا */
+    }
+  
+    .artical-body {
+      max-width: 100%; /* النص يأخذ العرض الكامل */
+    }
+  
+    .article-type p {
+      font-size: 16px;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  /* Button styling */
+  .btn-custom {
+    background-color: #00a9a6;
+    color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #006666;
+  }
+  
+  /* start main */
+  .sidebar h4 {
+    text-align: center;
+    color: #eee;
+    background-color: var(--background-color);
+    border-radius: 8px;
+  }
+  
+  
+  
+  /* stop main */
+  

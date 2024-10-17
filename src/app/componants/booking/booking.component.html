@@ -1,1 +1,44 @@
-<p>booking works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <h3 class="text-center mb-4">احجز موعدك مع نخبة من الأطباء</h3>
+                <img src="assets/doctor.jpg" alt="أطباء" class="doctor-img">
+                <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+                    <div class="form-group">
+                        <label for="fullName">الاسم رباعي</label>
+                        <input type="text" class="form-control" id="fullName" required
+                               [(ngModel)]="bookingData.fullName" name="fullName" #fullName="ngModel">
+        ng            </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">رقم الهاتف</label>
+                        <input type="text" class="form-control" id="phoneNumber" required
+                               [(ngModel)]="bookingData.phoneNumber" name="phoneNumber" #phoneNumber="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="booking">حجز</label>
+                        <select class="form-control" id="booking" required
+                                [(ngModel)]="bookingData.bookingType" name="bookingType" #bookingType="ngModel">
+                            <option value="">اختر نوع الحجز</option>
+                            <option value="استشارة">استشارة</option>
+                            <option value="فحص شامل">فحص شامل</option>
+                            <option value="تحاليل طبية">تحاليل طبية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" id="email" required
+                               [(ngModel)]="bookingData.email" name="email" #email="ngModel">
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">أضف ملاحظة</label>
+                        <textarea class="form-control" id="notes" rows="3"
+                                  [(ngModel)]="bookingData.notes" name="notes" #notes="ngModel"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2" [disabled]="!bookingForm.form.valid">تأكيد الحجز</button>
+                    <button type="button" class="btn btn-danger" (click)="resetForm()">إلغاء</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
