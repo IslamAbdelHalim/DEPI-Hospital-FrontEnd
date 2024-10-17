@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrl: './inquiries.component.css'
 })
 export class InquiriesComponent {
+  inquiryData = {
+    username: '',
+    email: '',
+    department: '',
+    labPhone: '',
+    radiologyPhone: '',
+    otherInquiry: ''
+  };
+
+  onSubmit() {
+    console.log(this.inquiryData);
+    alert('تم إرسال استفسارك بنجاح');
+  }
+
 
 }

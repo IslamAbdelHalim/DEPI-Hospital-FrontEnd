@@ -1,0 +1,272 @@
+<app-header></app-header>
+<div class="container">
+
+    <div class="row" style="direction:rtl;">
+        <div class="compo ,col-8>">
+
+            <div class=" col mt-3 mb-3">
+                <h2>مقالات طبية</h2>
+            </div>
+        </div>
+        <div class="row filter mt-3 mb-4">
+
+            <div class="col-2">
+                <p> ترتيب القنوات حسب </p>
+            </div>
+            <div class="col-2">
+                <select class="form-select" id="dropdown2">
+                    <option selected="">تاريخ المقال </option>
+                    <option value="1">الاحدث</option>
+                    <option value="1">الاقدم </option>
+
+                </select>
+            </div>
+            <div class="col-2">
+                <select class="form-select" id="dropdown2">
+                    <option selected="">التصنيفات </option>
+                    <option value="1">النفسية</option>
+                    <option value="1">الجلدية </option>
+                    <option value="1">الاعشاب </option>
+                    <option value="1">الاورام </option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <h4>أقسام طبية</h4>
+                <ul>
+                    <li><a href="./article-hair">قسم التشريح وعلم الأجنة</a></li>
+                    <li><a href="./article-nose">قسم الباثولوجيا</a></li>
+                    <li><a href="./article-pressure">قسم الفسيولوجيا</a></li>
+                    <li><a href="./article-hair">قسم الكيمياء الحيوية</a></li>
+                    <li><a href="./article-nose">قسم الباثولوجيا</a></li>
+                    <li><a href="./article-pressure">قسم الفارماكولوجيا</a></li>
+                    <li><a href="./article-hair">قسم السمعيات الطبية</a></li>
+                    <li><a href="./article-nose">قسم طب الأسنان</a></li>
+                </ul>
+
+                <h4>مواضيع شائعة</h4>
+                <ul>
+                    <li><a href="./article-pressure">ارتفاع ضغط الدم</a></li>
+                    <li><a href="./article-nose">الأمراض المزمنة</a></li>
+                    <li><a href="./article-hair">أمراض العيون</a></li>
+                    <li><a href="./article-pressure">أمراض القلب</a></li>
+                    <li><a href="./article-nose">أمراض الأسنان</a></li>
+                    <li><a href="./article-hair">حساسية</a></li>
+                    <li><a href="./article-pressure">أعشاب طبية</a></li>
+                </ul>
+
+                <h4>أطباء متميزون</h4>
+                <ul>
+                    <li><a href="./doctors">د/ خالد زكي</a></li>
+                    <li><a href="./doctors">د/ أحمد مجدي</a></li>
+                    <li><a href="./doctors">د/ جمال طارق</a></li>
+                    <li><a href="./doctors">د/ علا محمد</a></li>
+                    <li><a href="./doctors">د/ خيرية مندور</a></li>
+                    <li><a href="./doctors">د/ إسعاد سعيد</a></li>
+                    <li><a href="./doctors">د/ جميلة فاروق</a></li>
+                </ul>
+
+                <h4>سياسات</h4>
+                <ul>
+                    <li><a href="#">سياسة نشر المقالات</a></li>
+                    <li><a href="#">سياسة الأسئلة والأجوبة</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">سياسة وحق المريض</a></li>
+                </ul>
+
+                <div class="text-center">
+                    <button type="button" class="book btn rounded-pill" [routerLink]="['/booking']">
+                        احجز موعدك
+                      </button>
+                </div>
+            </div>
+
+
+            <!-- Main content -->
+
+
+            <div class="col-md-9">
+                <div class="row">
+                    <!-- Article Header -->
+                    <div class="col-12 mb-2">
+                        <div class=" article-grid">
+                            <a href="./article-nose">
+                                <div>
+
+                                    <h2>التهاب الأذن الوسطى</h2>
+                                    <p>بقلم: د/ أحمد صلاح</p>
+                                    <p>تاريخ النشر: 7/9/2024</p>
+                                </div>
+
+
+
+                                <!-- Article Image -->
+                                <div>
+
+                                    <img src="assets/article/ear-infection.jpeg" alt="Ear Infection" class="img-fluid">
+
+
+                                </div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Articles Grid -->
+
+                    <div class="col-12  mb-2">
+                        <div class="article-type">
+
+
+                            <diV class="artical-body ">
+                                <a href="./article-pressure">
+                                    <h5>العلاقة بين التوتر وارتفاع ضغط الدم وطرق الحد منه</h5>
+                                </a>
+                                <a href="./article-pressure">
+                                    <p class="text"> ان التعرض لمستويات عالية من القلق والتوتر يمكن ان يؤدي
+                                        الى
+                                        ارتفاع
+                                        مستويات ضغط
+                                        الدم
+                                        لدى الشخص...</p>
+                                </a>
+                            </diV>
+                            <div class="photo">
+                                <a href="./article-pressure"><img class="image"
+                                        src="assets/article/high pressure.jpg (1).webp" alt="Article Image"></a>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-12  mb-2">
+                            <div class="article-type">
+                                <diV class="artical-body">
+                                    <a href="./article-hair">
+                                        <h5>طرق طبيعية وأعشاب لعلاج الثعلبة</h5>
+                                    </a>
+                                    <a href="./article-hair">
+                                        <p>تساعد بعض الخيارات الطبيعية في علاج الثعلبة
+                                            في المنزل وتحفيز نمو الشعر من جديد في المنطقة المصابة ومن الممكن تجربة
+                                            ...</p>
+                                    </a>
+                                </div>
+
+                                <div class="photo">
+                                    <a href="./article-hair"> <img class="image"
+                                            src="assets/article/hair problem.jpg.webp" alt="Article Image"></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12  mb-2">
+                            <div class="article-type">
+                                <diV class="artical-body ">
+                                    <a href="./article-nose">
+                                        <h5>أعراض التهاب الأذن الوسطى</h5>
+                                    </a>
+                                    <a href="./article-nose">
+                                        <p>تشمل أعراض التهاب الأذن الوسطى عند الكبار بالطبلين والدوار كما تصيب هذه
+                                            الحالة
+                                            الأطفال.</p>
+                                    </a>
+
+
+                                </div>
+
+                                <div class="photo">
+                                    <a href="./article-nose"> <img class="image"
+                                            src="assets/article/ear-infection.jpeg" class="photo"
+                                            alt="Article Image"></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-12  mb-2">
+                            <div class="article-type">
+                                <diV class="artical-body ">
+                                    <a href="./article-pressure">
+                                        <h5>العلاقة بين التوتر وارتفاع ضغط الدم وطرق الحد منه</h5>
+                                    </a>
+                                    <a href="./article-pressure">
+                                        <p> ان التعرض لمستويات عالية من القلق والتوتر يمكن ان
+                                            يؤدي
+                                            الى
+                                            ارتفاع
+                                            مستويات ضغط
+                                            الدم
+                                            لدى الشخص...</p>
+                                    </a>
+                                </diV>
+
+                                <div class="photo">
+                                    <a href="./article-pressure"><img class="image"
+                                            src="assets/article/high pressure.jpg (1).webp" alt="Article Image"></a>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                        <div class="col-12  mb-2">
+                            <div class="article-type">
+                                <diV class="artical-body ">
+                                    <a href="./article-hair">
+                                        <h5>طرق طبيعية وأعشاب لعلاج الثعلبة</h5>
+                                    </a>
+                                    <a href="./article-hair">
+                                        <p>تساعد بعض الخيارات الطبيعية في علاج
+                                            الثعلبة في المنزل وتحفيز نمو الشعر من جديد في المنطقة المصابة
+                                            ومن الممكن
+                                            تجربة ...</p>
+                                    </a>
+                                </div>
+
+                                <div class="photo">
+                                    <a href="./article-hair"><img class="image"
+                                            src="assets/article/hair problem.jpg.webp" alt="Article Image"></a>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <nav aria-label="page navigation" class="d-flex justify-content-center my-3">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="" class="page-link" aria-label="previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a href="" class="page-link">1</a></li>
+                                <li class="page-item"><a href="" class="page-link">2</a></li>
+                                <li class="page-item"><a href="" class="page-link">3</a></li>
+                                <li class="page-item"><a href="" class="page-link">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<app-footer> </app-footer>

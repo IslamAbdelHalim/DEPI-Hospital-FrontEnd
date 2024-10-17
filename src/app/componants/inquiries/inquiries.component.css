@@ -1,0 +1,22 @@
+body {
+    background-color: #f0f8ff;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .card {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #00b894;
+    border: none;
+    width: 100%;
+  }
+  
+  .form-control {
+    margin-bottom: 15px;
+  }
