@@ -30,6 +30,10 @@ import { AllclinicsComponent } from './componants/allclinics/allclinics.componen
 import { SignupComponent } from './componants/signup/signup.component';
 import { EachClinicComponent } from './componants/each-clinic/each-clinic.component';
 import { BookingComponent } from './componants/booking/booking.component';
+import { ArticleComponent } from './componants/article/article.component';
+import { ArticleNoseComponent } from './componants/article-nose/article-nose.component';
+import { ArticleHairComponent } from './componants/article-hair/article-hair.component';
+import { ArticlePressureComponent } from './componants/article-pressure/article-pressure.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { BookingComponent } from './componants/booking/booking.component';
     AllclinicsComponent,
     SignupComponent,
     EachClinicComponent,
-    BookingComponent,
+    ArticleComponent,
+    ArticleNoseComponent,
+    ArticleHairComponent,
+    ArticlePressureComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

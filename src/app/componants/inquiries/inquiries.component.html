@@ -1,1 +1,112 @@
-<p>inquiries works!</p>
+<div class="container" style="direction: rtl;">
+  <div class="row">
+    <div class="col text-center mt-5">
+      <h2>استفسارات المرضى</h2>
+      <img src="assets/LOGO.png" alt="Logo" style="width: 70px; height: 70px;" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <form (ngSubmit)="onSubmit()" #inquiryForm="ngForm">
+        <div class="mb-3">
+          <label for="inputUsername" class="form-label">اسم المستخدم</label>
+          <input
+            type="text"
+            id="inputUsername"
+            class="form-control"
+            placeholder="ادخل اسم المريض اذا سبق التسجيل"
+            [(ngModel)]="inquiryData.username"
+            name="username"
+            required
+          />
+          <div id="usernameHelpBlock" class="form-text">
+            <p>ليس لديك اسم مستخدم؟ <a href="#">سجل الآن</a></p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">الإيميل</label>
+          <input
+            type="email"
+            id="inputEmail"
+            class="form-control"
+            placeholder="name@example.com"
+            [(ngModel)]="inquiryData.email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="inputDepartment" class="form-label">عن أي قسم تريد الاستفسار</label>
+          <select
+            class="form-select"
+            id="inputDepartment"
+            [(ngModel)]="inquiryData.department"
+            name="department"
+            required
+          >
+            <option value="قسم الجلدية">قسم الجلدية</option>
+            <option value="قسم الباطنة">قسم الباطنة</option>
+            <option value="قسم الرمد">قسم الرمد</option>
+            <option value="قسم الأطفال">قسم الأطفال</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputLabPhone" class="form-label">
+            إذا كان استفسارك عن نتيجة تحاليل فبرجاء إدخال رقم الهاتف المسجل لدى المعمل
+          </label>
+          <input
+            type="text"
+            id="inputLabPhone"
+            class="form-control"
+            placeholder="ادخل رقم الهاتف"
+            [(ngModel)]="inquiryData.labPhone"
+            name="labPhone"
+          />
+          <div id="labPhoneHelpBlock" class="form-text">
+            <p>سيتواصل معك المعمل في أقرب وقت لتبليغك بنتيجة التحاليل</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputRadiologyPhone" class="form-label">
+            إذا كان استفسارك عن نتيجة أشعة فبرجاء إدخال رقم الهاتف المسجل لدى مركز الأشعة
+          </label>
+          <input
+            type="text"
+            id="inputRadiologyPhone"
+            class="form-control"
+            placeholder="ادخل رقم الهاتف"
+            [(ngModel)]="inquiryData.radiologyPhone"
+            name="radiologyPhone"
+          />
+          <div id="radiologyPhoneHelpBlock" class="form-text">
+            <p>سيتواصل معك مركز الأشعة في أقرب وقت لتبليغك بنتيجة الأشعة</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputOtherInquiry" class="form-label">
+            يسعدنا تلقي استفساراتك في أي وقت، إذا كان لديك استفسار آخر لا تتردد في ترك استفسارك
+          </label>
+          <textarea
+            id="inputOtherInquiry"
+            class="form-control"
+            rows="3"
+            [(ngModel)]="inquiryData.otherInquiry"
+            name="otherInquiry"
+          ></textarea>
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary" [disabled]="!inquiryForm.form.valid">
+            أرسل استفسارك
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
