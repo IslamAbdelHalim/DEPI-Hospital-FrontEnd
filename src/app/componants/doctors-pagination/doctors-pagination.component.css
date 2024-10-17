@@ -2,7 +2,10 @@
   background-color: #09a5b02b;
 }
 .doctors .card {
-  background-color: #eee;
+  /* background-color: #eee; */
+  /* background-image: linear-gradient(90deg, #0093A1, #00363B); */
+  background-color: var(--trans-color);
+  color: white;
   border-radius: 8px;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
@@ -55,5 +58,9 @@
 }
 
 .doctors .card .social ul fa-icon{
-  color: #088395;
+  color: #00363B;
+}
+
+.doctors .card .social ul fa-icon:hover {
+  color: white;
 }

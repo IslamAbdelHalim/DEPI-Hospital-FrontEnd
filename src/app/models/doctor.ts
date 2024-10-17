@@ -4,7 +4,7 @@ export interface Doctor {
   experience: string,
   education: string,
   availability: {
-    days: [string],
+    days: string[],
     time: string,
   },
   profile_image: string

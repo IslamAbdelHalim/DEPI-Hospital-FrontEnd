@@ -27,6 +27,7 @@ export class HeaderComponent {
 
   ngOnInit() {
     this.id = localStorage.getItem('id') || undefined;
+    console.log(this.id)
     this.auth.loggedIn$.subscribe((login) => {
       this.isLoggedIn = login;
     })
