@@ -19,8 +19,6 @@ export class DoctorsComponent {
     this.doctorService.getDoctors().subscribe((docs) => {
       this.doctors = docs.doctors
       this.totalItems = this.doctors.length;
-      console.log(this.doctors)
-      console.log(this.doctors[0].availability.days[1])
     }
     , (err) => console.log(err));
   }
