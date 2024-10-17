@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
@@ -30,6 +31,7 @@ export class BookingComponent {
       notes: ''
     };
   }
+  constructor( private user: UserService, private router: Router){}
 }
  
-}
+
