@@ -36,6 +36,5 @@ export class AllclinicsComponent implements OnInit{
     } else {
       this.clinics = this.allClinics.filter((clinic) => clinic.name.includes(this.name));
     }
-    this.name = '';
   }
 }

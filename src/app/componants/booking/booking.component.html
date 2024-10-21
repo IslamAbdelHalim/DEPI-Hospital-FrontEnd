@@ -6,17 +6,17 @@
                 <img src="assets/Doctors.jpg" alt="أطباء" class="doctor-img">
                 <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
                     <div class="form-group">
-                        <label for="fullName">الاسم رباعي</label>
+                        <label for="fullName" class="form-label mb-2">الاسم رباعي</label>
                         <input type="text" class="form-control" id="fullName" required
                               [(ngModel)]="bookingData.fullName" name="fullName" #fullName="ngModel">
                     </div>
                     <div class="form-group">
-                        <label for="phoneNumber">رقم الهاتف</label>
+                        <label for="phoneNumber" class="form-label my-2">رقم الهاتف</label>
                         <input type="text" class="form-control" id="phoneNumber" required
                               [(ngModel)]="bookingData.phoneNumber" name="phoneNumber" #phoneNumber="ngModel">
                     </div>
                     <div class="form-group">
-                        <label for="booking">حجز</label>
+                        <label for="booking" class="form-label my-2">حجز</label>
                         <select class="form-control" id="booking" required
                                 [(ngModel)]="bookingData.bookingType" name="bookingType" #bookingType="ngModel">
                             <option value="">اختر نوع الحجز</option>
@@ -26,12 +26,35 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="email">البريد الإلكتروني</label>
-                        <input type="email" class="form-control" id="email" required
-                              [(ngModel)]="bookingData.email" name="email" #email="ngModel">
+                        <label for="clinic" class="form-label my-2"> العيادة</label>
+                        <select class="form-select" aria-label="Default select example" id="clinic" (change)="onClinicChange($event)">
+                            <option selected> اختر العيادة </option>
+                            <option *ngFor="let clinic of clinics" value="bookingData.clinic" name="clinic">{{ clinic.name }}</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="notes">أضف ملاحظة</label>
+                        <label for="doctor" class="form-label my-2">الطبيب المعالج</label>
+                        <select class="form-select" aria-label="Default select example" id="doctor" (change)="onDoctorChange($event)">
+                            <option selected>اختر الطبيب المعالج</option>
+                            <option *ngFor="let doctor of doctors" [value]="bookingData.doctor"> {{ doctor.name }}</option>
+                        </select>
+                    </div>
+                    <div class="d-flex">
+                        <div class="day">
+                          <label for="day" class="form-label my-2"> اليوم</label>
+                          <select class="form-select" aria-label="Default select example" id="day">
+                            <option value="" selected></option>
+                            <option *ngFor="let day of days" [value]="bookingData.time">{{ day }}</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label my-2">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" id="email" required
+                              [(ngModel)]="bookingData.email" name="email" #email="ngModel" value="bookingData.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="notes" class="form-label my-2">أضف ملاحظة</label>
                         <textarea class="form-control" id="notes" rows="3"
                                   [(ngModel)]="bookingData.notes" name="notes" #notes="ngModel"></textarea>
                     </div>

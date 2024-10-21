@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { ResponseModel } from '../../models/responseModel';
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +21,7 @@ export class SignupComponent {
   errPass: boolean = false;
 
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router, private authService: AuthService) {}
 
   submit() {
     const body = {
@@ -33,12 +34,11 @@ export class SignupComponent {
 
     this.userService.register(body).subscribe((res: ResponseModel) => {
       const id = res.data.user._id;
-      const token = res.token;
-      localStorage.setItem('token', token)
-      localStorage.setItem('id', id)
-
+      localStorage.setItem('id', id);
+      localStorage.setItem('token', res.token);
+      this.authService.login();
       this.router.navigate(['/user', id])
-    }, 
+    },
     err => {
       if(err.error.message.includes('duplicate')) {
         this.errMail = true;

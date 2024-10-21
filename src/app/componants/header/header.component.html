@@ -9,11 +9,16 @@
           <li class="list-inline-item me-2"><a href="#"><fa-icon [icon]="faInstagram"></fa-icon></a> </li>
           <li class="list-inline-item mx-2"><a href="mailto: hospital@depihospital.com"><fa-icon class="me-2" [icon]="faEnvelope1"></fa-icon><span class="d-sm-inline-block d-none">hospital&#64;depihospital.com </span></a></li>
         </ul>
-        <div class="auth" *ngIf="!isLoggedIn; else UserLogin">
-          <button type="button" [routerLink]="['auth/login']" class="btn rounded-pill btn-sm">Login</button>
-          <button type="button" [routerLink]="['auth/signup']" class="btn rounded-pill btn-sm">signup</button>
+        <div *ngIf="isLoading else authBlock">
+          <p>Loading....</p>
         </div>
-        <ng-template #UserLogin>
+        <ng-template #authBlock>
+          <div class="auth" *ngIf="!isLoggedIn; else profileIcon">
+            <button type="button" [routerLink]="['auth/login']" class="btn rounded-pill btn-sm">دخول</button>
+            <button type="button" [routerLink]="['auth/signup']" class="btn rounded-pill btn-sm">حساب جديد</button>
+          </div>
+        </ng-template>
+        <ng-template #profileIcon>
           <div class="user position-relative">
             <div class="user-icon rounded bg-green" (click)="toggle()">
               <fa-icon [icon]="faUser"></fa-icon>

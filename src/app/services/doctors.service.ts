@@ -7,7 +7,7 @@ import {Observable, of, tap} from "rxjs";
 })
 export class DoctorsService {
   private cacheDoctors = new Map<string, any>(); 
-  apiUrl = 'http://127.0.0.1:5000/api/doctors';
+  private apiUrl = 'http://127.0.0.1:5000/api/doctors';
   constructor(private http: HttpClient) { }
 
   getDoctors() : Observable<any> {
@@ -15,9 +15,8 @@ export class DoctorsService {
     if (doctors) {
       return of(doctors)
     } else {
-      return this.http.get(`${this.apiUrl}`).pipe(tap(data => this.cacheDoctors.set('doctors', doctors)));
+      return this.http.get(`${this.apiUrl}`).pipe(tap(() => this.cacheDoctors.set('doctors', doctors)));
     }
     
   }
-
 }

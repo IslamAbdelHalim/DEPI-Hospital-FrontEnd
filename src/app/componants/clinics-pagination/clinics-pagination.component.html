@@ -6,7 +6,7 @@
     </div>
     <ul class="page d-flex align-items-center justify-content-between my-4 flex-column flex-md-row">
       <li *ngFor="let clinic of clinics | paginate: { id:'clinic', itemsPerPage: 3, currentPage: p, totalItems: 18}" class="mb-3">
-        <app-clinic  [clinic]="clinic.name" [img]="clinic.picture"></app-clinic>
+        <app-clinic  [clinic]="clinic.name" [img]="clinic.picture" [routerLink]="['/allclinics', clinic._id]"></app-clinic>
       </li>
     </ul>
     <pagination-controls (pageChange)="onPageChange($event)" class="d-flex align-items-center justify-content-center" id="clinic"></pagination-controls>

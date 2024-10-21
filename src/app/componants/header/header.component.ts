@@ -9,9 +9,9 @@ import { faEnvelope, faPhone, faUser } from'@fortawesome/free-solid-svg-icons';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   isLoggedIn: boolean | undefined;
-
+  isLoading: boolean = true;
 
   open: boolean = false;
   id: string | undefined;
@@ -26,10 +26,9 @@ export class HeaderComponent {
   constructor(private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
-    this.id = localStorage.getItem('id') || undefined;
-    console.log(this.id)
-    this.auth.loggedIn$.subscribe((login) => {
-      this.isLoggedIn = login;
+    this.auth.loggedIn$.subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+      this.isLoading = false;
     })
   }
 
@@ -41,5 +40,4 @@ export class HeaderComponent {
   toggle(): void {
     this.open = !this.open;
   }
-  
 }

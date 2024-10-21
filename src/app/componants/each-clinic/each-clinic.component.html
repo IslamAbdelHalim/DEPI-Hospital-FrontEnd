@@ -21,12 +21,30 @@
     <div class="my-3" *ngIf="doctors.length === 0">
       <p class="h6">لا يوجد اطباء متاحين حاليا</p>
     </div>
-    <div class="docs d-flex">
-      <div class="doc card" *ngFor="let doctor of doctors">
-        <img [src]="'assets/doctors/' + doctor.profile_image + '-min.jpg'" alt="profile image">
-        <div class="card-body">
-          <h5 class="card-title">{{doctor.name}}</h5>
-          <p class="card-text">{{doctor.education}}</p>
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="docs d-flex " >
+        <div class="doc card" *ngFor="let doctor of doctors" (click)="clickDoctor(doctor)">
+          <img [src]="'assets/doctors/' + doctor.profile_image + '-min.jpg'" alt="profile image">
+          <div class="card-body">
+            <h5 class="card-title">{{doctor.name}}</h5>
+            <p class="card-text">{{doctor.education}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="clinic-time border p-3 rounded-4" dir="rtl">
+        <h3 class="m-2">مواعيد العيادات</h3><hr>
+        <div class="times">
+          <ul *ngFor="let doctor of doctors">
+            <li class="h5 m-2">د.{{doctor.name}}</li>
+            <ul *ngFor="let day of doctor.availability.days" class="d-flex align-items-center justify-content-between p-0">
+              <div class="m-3">
+                <li >{{day}}</li>
+                <li dir="ltr">{{doctor.availability.time}}</li>
+              </div>
+              <li><button type="button" class="btn btn-success" (click)="booking(doctor.name, day, clinic.name)">حجز</button></li>
+            </ul>
+            <hr>
+          </ul>
         </div>
       </div>
     </div>

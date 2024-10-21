@@ -34,6 +34,7 @@ import { ArticleComponent } from './componants/article/article.component';
 import { ArticleNoseComponent } from './componants/article-nose/article-nose.component';
 import { ArticleHairComponent } from './componants/article-hair/article-hair.component';
 import { ArticlePressureComponent } from './componants/article-pressure/article-pressure.component';
+import { TimeConverterPipe } from './pipes/time-converter.pipe';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ArticlePressureComponent } from './componants/article-pressure/article-
     ArticleNoseComponent,
     ArticleHairComponent,
     ArticlePressureComponent,
-    BookingComponent
+    BookingComponent,
+    TimeConverterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { isPlatformBrowser } from '@angular/common';
-import { Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser} from "@angular/common";
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,18 +10,41 @@ export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   loggedIn$ = this.loggedIn.asObservable();
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object) {
-    if (isPlatformBrowser(this.platformId)) {
-      const token = localStorage.getItem('token');
-      if (token) {
-        this.loggedIn.next(true);
-      }
+  constructor(private cookies: CookieService, @Inject(PLATFORM_ID) private platformId: Object) {
+    this.checkLogin();
+  }
+
+  private checkLogin(): void {
+    const token = this.getToken();
+    if (token) {
+      console.log('User is logged in');
+      this.loggedIn.next(true);
+    } else {
+      console.log('User is not logged in');
+      this.loggedIn.next(false);
     }
   }
 
-  login(token: string): void {
+  // @ts-ignore
+  getId(): string | undefined {
     if (isPlatformBrowser(this.platformId)) {
-      localStorage.setItem('token', token);
+      console.log(localStorage.getItem('id'));
+      return localStorage.getItem('id') || undefined;
+    }
+  }
+
+  getToken(): any {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem('token')
+    } else {
+      console.log('from cookies')
+      return this.cookies.get('token');
+    }
+  }
+
+  login(): void {
+    if (this.getToken()) {
+      console.log('login is run')
       this.loggedIn.next(true);
     }
   }
@@ -29,7 +52,8 @@ export class AuthService {
   logout(): void {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.removeItem('token');
-      this.loggedIn.next(false);
     }
+    this.cookies.delete('token');
+    this.loggedIn.next(false);
   }
 }

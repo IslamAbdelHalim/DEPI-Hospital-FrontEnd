@@ -27,7 +27,7 @@
                 <label class="eachlabel" for="fullname">تاريخ الميلاد</label>
             </div>
             <div class="col-md-8">
-                <input class="inputuserprofile" type="text" [value]="userData.birthday" readonly>
+                <input class="inputuserprofile" type="text" [value]="userData.birthday | date: 'dd.MM.yy'" readonly>
             </div>
         </div>
 
@@ -90,10 +90,10 @@
         <div class="eachappointment" *ngFor="let appointment of bookings">
             <div class="row">
                 <div class="col-md-4" >
-                    <label class="eachlabel" for="fullname">الاسم كامل</label>
+                    <label class="eachlabel" for="fullname"> إسم المريض </label>
                 </div>
                 <div class="col-md-8">
-                    <input class="inputuserprofile" type="text" [value]="appointment.name" readonly>
+                    <input class="inputuserprofile" type="text" [value]="appointment.username" readonly>
                 </div>
             </div>
             <div class="row">
@@ -104,3 +104,30 @@
                     <input class="inputuserprofile" type="text" [value]="appointment.email" readonly>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">العيادة</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.clinic" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">دكتور</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" [value]="appointment.doctor" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label class="eachlabel" for="fullname">الحالة </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="inputuserprofile" type="text" value="تم" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
