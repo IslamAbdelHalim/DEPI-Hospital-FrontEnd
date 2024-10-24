@@ -40,8 +40,8 @@ export class EachClinicComponent implements OnInit{
     console.log(event)
   }
 
-  booking(name: string, day: string, clinic: string) {
-    this.bookingService.moveInfo(name, clinic, day);
+  booking(name: string, day: string, clinic: string, time: string) {
+    this.bookingService.moveInfo(name, clinic, day, time);
     this.router.navigate(['booking']);
   }
 }

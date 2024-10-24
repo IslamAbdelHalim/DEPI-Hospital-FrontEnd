@@ -1,3 +1,13 @@
+<div class="confirm-booking" *ngIf="confirm">
+    <div class="overlay w-100"></div>
+    <div class="dialog text-center" dir="rtl">
+        <p class="close bg-success" (click)="confirm=false">X</p>
+        <p class="h2 mb-3">تم تـأكيد الحجز</p>
+        <fa-icon class="display-1 text-success" [icon]="faCircleCheck"></fa-icon>
+        <p class=" h2 mt-3">شكرا لثقتكم بنا</p>
+    </div>
+</div>
+
 <div class="container">
     <div class="row justify-content-center my-5" dir="rtl">
         <div class="col-md-6">
@@ -27,36 +37,42 @@
                     </div>
                     <div class="form-group">
                         <label for="clinic" class="form-label my-2"> العيادة</label>
-                        <select class="form-select" aria-label="Default select example" id="clinic" (change)="onClinicChange($event)">
+                        <select class="form-select" aria-label="Default select example" id="clinic" (change)="onClinicChange($event)"  name="clinic" [(ngModel)]="bookingData.clinic">
                             <option selected> اختر العيادة </option>
-                            <option *ngFor="let clinic of clinics" value="bookingData.clinic" name="clinic">{{ clinic.name }}</option>
+                            <option *ngIf="bookingData.clinic" [value]="bookingData.clinic">{{ bookingData.clinic }}</option>
+                            <option *ngFor="let clinic of clinics" [value]="clinic.name">{{ clinic.name }}</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="doctor" class="form-label my-2">الطبيب المعالج</label>
-                        <select class="form-select" aria-label="Default select example" id="doctor" (change)="onDoctorChange($event)">
-                            <option selected>اختر الطبيب المعالج</option>
-                            <option *ngFor="let doctor of doctors" [value]="bookingData.doctor"> {{ doctor.name }}</option>
+                        <select class="form-select" aria-label="Default select example" id="doctor" (change)="onDoctorChange($event)" name="doctor" [(ngModel)]="bookingData.doctor">
+                            <option *ngIf="!bookingData.doctor" disabled selected>اختر الطبيب المعالج</option>
+                            <option *ngIf="bookingData.doctor" [value]="bookingData.doctor">{{ bookingData.doctor }}</option>
+                            <option *ngFor="let doctor of doctors" [value]="doctor.name"> {{ doctor.name }}</option>
                         </select>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex align-items-center justify-content-evenly my-3">
                         <div class="day">
                           <label for="day" class="form-label my-2"> اليوم</label>
-                          <select class="form-select" aria-label="Default select example" id="day">
-                            <option value="" selected></option>
-                            <option *ngFor="let day of days" [value]="bookingData.time">{{ day }}</option>
+                          <select class="form-select py-1" aria-label="Default select example" id="day" [(ngModel)]="bookingData.day" name="day" style="width: 150px">
+                            <option [value]="bookingData.day" selected *ngIf="bookingData.day" >{{bookingData.day}}</option>
+                            <option *ngFor="let day of days" value="day" >{{ day }}</option>
                           </select>
+                        </div>
+                        <div class="time" *ngIf="bookingData.time"  >
+                            <label for="time" class="mb-2">الساعة</label><br>
+                            <input type="text" name="time" id="time" [(ngModel)]="bookingData.time" style="width: 160px" class="py-1" disabled dir="rtl">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label my-2">البريد الإلكتروني</label>
                         <input type="email" class="form-control" id="email" required
-                              [(ngModel)]="bookingData.email" name="email" #email="ngModel" value="bookingData.email">
+                              [(ngModel)]="bookingData.email" name="email" [(ngModel)]="bookingData.email">
                     </div>
                     <div class="form-group">
                         <label for="notes" class="form-label my-2">أضف ملاحظة</label>
                         <textarea class="form-control" id="notes" rows="3"
-                                  [(ngModel)]="bookingData.notes" name="notes" #notes="ngModel"></textarea>
+                                  [(ngModel)]="bookingData.notes" name="notes"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mb-2" [disabled]="!bookingForm.form.valid">تأكيد الحجز</button>
                     <button type="button" class="btn btn-danger" (click)="resetForm()">إلغاء</button>

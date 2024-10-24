@@ -7,6 +7,7 @@ import {AuthService} from "../../services/auth.service";
 import {ClinicsService} from "../../services/clinics.service";
 import { DoctorsService} from "../../services/doctors.service";
 import {BookingService} from "../../services/booking.service";
+import { faCircleCheck} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-booking',
@@ -14,12 +15,17 @@ import {BookingService} from "../../services/booking.service";
   styleUrl: './booking.component.css'
 })
 export class BookingComponent implements OnInit{
+  faCircleCheck = faCircleCheck;
+  confirm: boolean = false;
+
   id: string | undefined;
   clinics: Clinic[] = [];
   doctors: Doctor[] = [];
+  allDoctors: Doctor[]= [];
 
   clinic: string = '';
   days: string[] = [];
+  time: string = '';
 
   bookingData = {
     fullName: '',
@@ -28,6 +34,7 @@ export class BookingComponent implements OnInit{
     email: '',
     clinic: '',
     doctor: '',
+    day: '',
     time: '',
     notes: ''
   };
@@ -53,19 +60,22 @@ export class BookingComponent implements OnInit{
 
     this.doctorService.getDoctors().subscribe((res) => {
       this.doctors = res.doctors;
-      console.log(this.doctors);
+      this.allDoctors = res.doctors;
     })
 
     this.bookingData.doctor = this.bookingService.doctor;
     this.bookingData.clinic = this.bookingService.clinic;
-    this.bookingData.time = this.bookingService.day;
+    this.bookingData.day = this.bookingService.day;
+    this.bookingData.time = this.bookingService.time;
+    console.log(this.bookingData.time)
     console.log(this.bookingData);
   }
 
   onClinicChange(event: any) {
     const value = event.target.value;
     console.log(value);
-    this.doctors = this.doctors.filter((doctor: Doctor) => doctor.clinic == value);
+    this.bookingData.doctor = '';
+    this.doctors = this.allDoctors.filter((doctor: Doctor) => doctor.clinic == value);
     console.log(this.doctors)
   }
 
@@ -73,12 +83,14 @@ export class BookingComponent implements OnInit{
     const value = event.target.value;
     const doctor = this.doctors.filter((doctor: Doctor) => doctor.name == value)[0];
     this.days = doctor.availability.days;
+    this.bookingData.time = doctor.availability.time;
+    console.log(this.time)
   }
 
   // عند تقديم النموذج
   onSubmit() {
+    this.confirm = true;
 
-    alert('تم تأكيد الحجز بنجاح');
     console.log(this.bookingData);
   }
 
@@ -91,6 +103,7 @@ export class BookingComponent implements OnInit{
       email: '',
       clinic: '',
       doctor: '',
+      day: '',
       time: '',
       notes: ''
     };

@@ -41,7 +41,7 @@
                 <li >{{day}}</li>
                 <li dir="ltr">{{doctor.availability.time}}</li>
               </div>
-              <li><button type="button" class="btn btn-success" (click)="booking(doctor.name, day, clinic.name)">حجز</button></li>
+              <li><button type="button" class="btn btn-success" (click)="booking(doctor.name, day, clinic.name, doctor.availability.time)">حجز</button></li>
             </ul>
             <hr>
           </ul>

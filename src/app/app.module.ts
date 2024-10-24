@@ -14,7 +14,6 @@ import { DepartmentesComponent } from './componants/departmentes/departmentes.co
 import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { AppointmentsComponent } from './componants/appointments/appointments.component';
 import { InquiriesComponent } from './componants/inquiries/inquiries.component';
-import { NewsComponent } from './componants/news/news.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EachDepartmentComponent } from './componants/each-department/each-department.component';
@@ -35,6 +34,10 @@ import { ArticleNoseComponent } from './componants/article-nose/article-nose.com
 import { ArticleHairComponent } from './componants/article-hair/article-hair.component';
 import { ArticlePressureComponent } from './componants/article-pressure/article-pressure.component';
 import { TimeConverterPipe } from './pipes/time-converter.pipe';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SignInDialogComponent } from './componants/sign-in-dialog/sign-in-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +51,6 @@ import { TimeConverterPipe } from './pipes/time-converter.pipe';
     DoctorsComponent,
     AppointmentsComponent,
     InquiriesComponent,
-    NewsComponent,
     EachDepartmentComponent,
     SliderComponent,
     NavbarComponent,
@@ -64,7 +66,8 @@ import { TimeConverterPipe } from './pipes/time-converter.pipe';
     ArticleHairComponent,
     ArticlePressureComponent,
     BookingComponent,
-    TimeConverterPipe
+    TimeConverterPipe,
+    SignInDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,10 +78,12 @@ import { TimeConverterPipe } from './pipes/time-converter.pipe';
     RouterModule,
     NgxPaginationModule,
     CommonModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatDialogModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

@@ -8,13 +8,15 @@ export class BookingService {
   doctor: string = '';
   clinic: string = '';
   day: string = '';
+  time: string = '';
 
   constructor(private http: HttpClient) {}
 
-  moveInfo(doctor: string, clinic: string, day: string) {
+  moveInfo(doctor: string, clinic: string, day: string, time: string) {
     this.day = day;
     this.doctor = doctor;
     this.clinic = clinic;
+    this.time = time;
   }
 
   getInfo() {
@@ -22,6 +24,7 @@ export class BookingService {
       doctor: this.doctor,
       clinic: this.clinic,
       day: this.day,
+      time: this.time
     }
   }
 }

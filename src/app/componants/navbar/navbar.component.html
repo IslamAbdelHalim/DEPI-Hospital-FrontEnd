@@ -1,6 +1,20 @@
+<div *ngIf="dialog">
+  <div class="overlay w-100"></div>
+  <div class="dialog" dir="rtl">
+    <div class="head d-flex align-items-center justify-content-between">
+      <h2>تسجيل دخول</h2>
+      <h4 class="close" (click)="this.dialog=false">X</h4>
+    </div>
+    <hr>
+    <p class="my-4">برجاء تسجيل الدخول لتتمكن من حجز موعدك</p>
+    <hr>
+    <button type="button" (click)="dialogClick()" class="btn btn-success">تسجيل دخول</button>
+  </div>
+</div>
+
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
-    <button type="button" class="book btn rounded-pill" [routerLink]="['/booking']">
+    <button type="button" class="book btn rounded-pill" (click)="book()">
       احجز موعدك
     </button>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
