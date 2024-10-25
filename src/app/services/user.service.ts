@@ -23,7 +23,6 @@ export class UserService {
 
   getUser(id: string = this.id): Observable<any> {
     const token = this.authService.getToken()
-    console.log(token)
     const headers = { Authorization: `Bearer ${token}` };
     return this.http.get(`${this.apiURL}/user/${id}`, { headers });
   }

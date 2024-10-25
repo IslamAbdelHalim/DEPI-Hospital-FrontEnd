@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ClinicsService} from "../../services/clinics.service";
 import {Clinic} from "../../models/clinic";
-import { error } from 'console';
 
 @Component({
   selector: 'app-clinics-pagination',
@@ -17,10 +17,11 @@ export class ClinicsPaginationComponent implements OnInit {
   itemsPerPage: number = 3
   totalItems: number = 18;
 
-  constructor(private clinicsService: ClinicsService, private cdr: ChangeDetectorRef) { }
+  constructor(private clinicsService: ClinicsService, private cdr: ChangeDetectorRef, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
     this.getClinics();
+    this.setupResponsive();
   }
 
   getClinics() {
@@ -37,5 +38,20 @@ export class ClinicsPaginationComponent implements OnInit {
   onPageChange(event: number) {
     this.p = event;
     this.getClinics()
+  }
+
+  setupResponsive() {
+    this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium]).subscribe(result => {
+      if (result.breakpoints[Breakpoints.XSmall]) {
+        console.log("XSmall screen detected, setting itemsPerPage to 1");
+        this.itemsPerPage = 1;
+      } else if (result.breakpoints[Breakpoints.Small]) {
+        console.log("Small screen detected, setting itemsPerPage to 2");
+        this.itemsPerPage = 2;
+      } else {
+        this.itemsPerPage = 3;
+      }
+      this.p = 1;
+    });
   }
 }

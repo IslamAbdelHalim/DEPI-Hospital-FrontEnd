@@ -1,5 +1,5 @@
 <!-- account section -->
-<div class="accountsection" >
+<div class="accountsection">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -19,7 +19,7 @@
                 <label class="eachlabel" for="fullname">الاميل</label>
             </div>
             <div class="col-md-8">
-                <input class="inputuserprofile" type="text"  [value]="userData.email" readonly>
+                <input class="inputuserprofile" type="text" [value]="userData.email" readonly>
             </div>
         </div>
         <div class="row">
@@ -87,45 +87,50 @@
                 <div class="labele">حجزاتـــــى</div>
             </div>
         </div>
-        <div class="eachappointment" *ngFor="let appointment of bookings">
-            <div class="row">
-                <div class="col-md-4" >
-                    <label class="eachlabel" for="fullname"> إسم المريض </label>
+        <div *ngIf="bookings && bookings.length > 0">
+            <div class="eachappointment" *ngFor="let appointment of bookings">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="eachlabel" for="fullname"> إسم المريض </label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="inputuserprofile" type="text" [value]="appointment.fullName" readonly>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <input class="inputuserprofile" type="text" [value]="appointment.username" readonly>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="eachlabel" for="fullname">الاميل</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="inputuserprofile" type="text" [value]="appointment.email" readonly>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">الاميل</label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="eachlabel" for="fullname">العيادة</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="inputuserprofile" type="text" [value]="appointment.clinic" readonly>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <input class="inputuserprofile" type="text" [value]="appointment.email" readonly>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="eachlabel" for="fullname">دكتور</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="inputuserprofile" type="text" [value]="appointment.doctor" readonly>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">العيادة</label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="eachlabel" for="fullname">الحالة </label>
+                    </div>
+                    <div class="col-md-8">
+                        <input class="inputuserprofile" type="text" value="حجز" readonly>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <input class="inputuserprofile" type="text" [value]="appointment.clinic" readonly>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">دكتور</label>
-                </div>
-                <div class="col-md-8">
-                    <input class="inputuserprofile" type="text" [value]="appointment.doctor" readonly>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="eachlabel" for="fullname">الحالة </label>
-                </div>
-                <div class="col-md-8">
-                    <input class="inputuserprofile" type="text" value="تم" readonly>
+                <div class="close d-flex justify-content-end">
+                    <button type="button" class="btn btn-danger m-3">الغاء الحجز</button>
                 </div>
             </div>
         </div>

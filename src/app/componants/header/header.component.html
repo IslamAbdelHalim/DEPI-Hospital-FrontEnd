@@ -24,7 +24,7 @@
               <fa-icon [icon]="faUser"></fa-icon>
             </div>
             <ul class="list-group position-absolute userList end-0 pe-0" dir="rtl" *ngIf="open">
-              <li class="list-group-item" [routerLink]="['/user/' + id]">الصفحة الشخصية</li>
+              <li class="list-group-item" (click)="open=false" [routerLink]="['/user/' + id]">الصفحة الشخصية</li>
               <li class="list-group-item" (click)="logout()">تسجيل خروج</li>
             </ul>
           </div>

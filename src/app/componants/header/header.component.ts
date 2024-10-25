@@ -30,10 +30,13 @@ export class HeaderComponent implements OnInit{
       this.isLoggedIn = loggedIn;
       this.isLoading = false;
     })
+
+    this.id = this.auth.getId();
   }
 
   logout():void {
     this.auth.logout();
+    this.open = false;
     this.router.navigate(['/auth/login'])
   }
 

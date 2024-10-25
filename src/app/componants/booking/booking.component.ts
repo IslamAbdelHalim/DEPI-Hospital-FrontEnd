@@ -50,12 +50,10 @@ export class BookingComponent implements OnInit{
     this.id = this.auth.getId()
     this.userService.getUser(this.id).subscribe((res) => {
       this.bookingData.email = res.data.user.email;
-      console.log(this.bookingData.email)
     })
 
     this.clinicService.getClinics().subscribe((res) => {
       this.clinics = res.clinics;
-      console.log(this.clinics);
     })
 
     this.doctorService.getDoctors().subscribe((res) => {
@@ -67,16 +65,12 @@ export class BookingComponent implements OnInit{
     this.bookingData.clinic = this.bookingService.clinic;
     this.bookingData.day = this.bookingService.day;
     this.bookingData.time = this.bookingService.time;
-    console.log(this.bookingData.time)
-    console.log(this.bookingData);
   }
 
   onClinicChange(event: any) {
     const value = event.target.value;
-    console.log(value);
     this.bookingData.doctor = '';
     this.doctors = this.allDoctors.filter((doctor: Doctor) => doctor.clinic == value);
-    console.log(this.doctors)
   }
 
   onDoctorChange(event: any) {
@@ -84,14 +78,18 @@ export class BookingComponent implements OnInit{
     const doctor = this.doctors.filter((doctor: Doctor) => doctor.name == value)[0];
     this.days = doctor.availability.days;
     this.bookingData.time = doctor.availability.time;
-    console.log(this.time)
   }
 
   // عند تقديم النموذج
   onSubmit() {
     this.confirm = true;
-
-    console.log(this.bookingData);
+    this.bookingService.book(this.bookingData).subscribe((res) => {
+      console.log(res);
+      this.resetForm();
+      this.router.navigate([`user/${this.id}`]);
+    }, (err) => {
+      console.log(err);
+    })
   }
 
   // إعادة ضبط النموذج
