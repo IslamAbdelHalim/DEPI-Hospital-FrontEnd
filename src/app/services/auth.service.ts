@@ -32,13 +32,13 @@ export class AuthService {
     }
   }
 
-    getToken(): any {
-      if (isPlatformBrowser(this.platformId)) {
-        const token =  localStorage.getItem('token')
-        console.log(`this is the token ${token}`)
-        return token;
-      }
+  getToken(): any {
+    if (isPlatformBrowser(this.platformId)) {
+      const token =  localStorage.getItem('token')
+      console.log(`this is the token ${token}`)
+      return token;
     }
+  }
 
   login(): void {
     if (this.getToken()) {

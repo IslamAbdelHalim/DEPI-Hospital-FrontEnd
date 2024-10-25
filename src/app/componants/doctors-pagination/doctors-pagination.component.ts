@@ -42,13 +42,15 @@ export class DoctorsPaginationComponent implements OnInit {
   }
 
   setupResponsive(){
-    this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium]).subscribe((result) => {
+    this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium, Breakpoints.Large]).subscribe((result) => {
       if (result.breakpoints[Breakpoints.XSmall]) {
         this.itemsPerPage = 1
       } else if (result.breakpoints[Breakpoints.Small]) {
         this.itemsPerPage = 2;
-      } else {
+      } else if ((result.breakpoints[Breakpoints.Medium])) {
         this.itemsPerPage = 3;
+      } else {
+        this.itemsPerPage = 4
       }
 
       this.p = 1;

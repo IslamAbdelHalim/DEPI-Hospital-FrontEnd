@@ -74,6 +74,7 @@
     display: flex;
     flex-direction: row; /* الصورة والنص بجانب بعضهما */
     align-items: center;
+    justify-content: space-between;
     border-radius: 8px;
     padding: 10px;
     margin-bottom: 20px;

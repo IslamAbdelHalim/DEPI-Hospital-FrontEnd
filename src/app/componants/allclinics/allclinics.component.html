@@ -11,10 +11,10 @@
 </form>
 
 <div class="container">
-  <div class="row row-cols-3 g-5">
+  <div class="row row-cols-3 g-5 justify-content-around align-items-center justify-content-md-around justify-content-lg-evenly">
     <div *ngFor="let clinic of clinics | paginate: {itemsPerPage: itemsPerPage, currentPage: p, totalItems: totalItems}" class="col">
       <app-clinic [routerLink]="['/allclinics', clinic._id]"  [clinic]="clinic.name" [img]="clinic.picture"></app-clinic>
     </div>
   </div>
-  <pagination-controls (pageChange)="p=$event" class="d-flex align-items-center justify-content-center my-5"></pagination-controls>
+  <pagination-controls (pageChange)="p=$event" class="d-flex align-items-center justify-content-center my-5" [responsive]="true"></pagination-controls>
 </div>

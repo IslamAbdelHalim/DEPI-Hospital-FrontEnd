@@ -3,6 +3,8 @@ import { Router } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { ClinicsService } from '../../services/clinics.service';
 import { Clinic } from '../../models/clinic';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 
 @Component({
   selector: 'app-allclinics',
@@ -17,10 +19,11 @@ export class AllclinicsComponent implements OnInit{
   totalItems: number = 18;
   name: string = '';
 
-  constructor(private clinicService: ClinicsService, private router: Router) {}
+  constructor(private clinicService: ClinicsService, private router: Router, private breakpointsObservable: BreakpointObserver) {}
 
   ngOnInit(): void {
     this.getClinics();
+    this.setupResponsive();
   }
 
   getClinics(): void {
@@ -36,5 +39,21 @@ export class AllclinicsComponent implements OnInit{
     } else {
       this.clinics = this.allClinics.filter((clinic) => clinic.name.includes(this.name));
     }
+  }
+
+  setupResponsive() {
+    this.breakpointsObservable.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium]).subscribe((result) => {
+      if (result.breakpoints[Breakpoints.XSmall]) {
+        this.itemsPerPage = 1;
+      } else if (result.breakpoints[Breakpoints.Small]) {
+        this.itemsPerPage = 2;
+      } else if (result .breakpoints[Breakpoints.Medium]) {
+        this.itemsPerPage = 3
+      } else {
+        this.itemsPerPage = 6;
+      }
+
+      this.p = 1;
+    })
   }
 }

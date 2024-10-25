@@ -1,0 +1,87 @@
+.sidebar {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sidebar h4 {
+  font-size: 20px;
+  color: #00a9a6;
+  border-bottom: 2px solid #00a9a6;
+  padding-bottom: 5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #006666;
+}
+
+/* Grid content for articles */
+
+
+
+
+/* style of main article */
+.article-grid {
+  padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+}
+
+.article-grid a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease;
+
+}
+.article-grid a:hover{
+  color: #006666;
+}
+
+.article-grid img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.toto {
+  position: relative;
+}
+
+.btn-custom {
+  background-color: #00a9a6;
+  color: white;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #006666;
+}
+
+/* start main */
+.sidebar h4 {
+  text-align: center;
+  color: #eee;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}

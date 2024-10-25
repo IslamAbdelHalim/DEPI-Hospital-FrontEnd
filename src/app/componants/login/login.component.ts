@@ -13,6 +13,7 @@ import {AuthService} from "../../services/auth.service";
 export class LoginComponent {
   email: string | undefined;
   password: string | undefined;
+  message: string = '';
 
   constructor(private user: UserService, private router: Router, private authService: AuthService) {}
 
@@ -29,7 +30,7 @@ export class LoginComponent {
       this.authService.login();
       this.router.navigate([`user/${id}`])
     }, (err) => {
-      console.log(err)
+      this.message = err.error.message;
     })
 
   }

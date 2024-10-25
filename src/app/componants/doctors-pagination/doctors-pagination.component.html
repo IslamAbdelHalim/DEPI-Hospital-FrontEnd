@@ -6,7 +6,7 @@
     </div>
 
     <ul class="d-flex justify-content-center justify-content-md-between">
-      <li *ngFor="let item of doctorsInDB | paginate: {id: 'doctor',itemsPerPage: itemsPerPage, currentPage: p, totalItems: total}" class="mx-2">
+      <li *ngFor="let item of doctorsInDB | paginate: {id: 'doctor',itemsPerPage: itemsPerPage, currentPage: p, totalItems: total}" class="mx-2 w-50 w-md-25">
         <div class="card text-center">
           <img [src]="'assets/doctors/' + item.profile_image + '-min.jpg'" alt="{{item.name}}" class="card-img-top img-fluid">
           <div class="card-body py-0 px-1">
