@@ -4,8 +4,8 @@
       <a href="/allclinics" class="link-offset-2 link-success link-underline-opacity-25 link-underline-opacity-100-hover">عرض الكل</a>
       <h3>العيادات</h3>
     </div>
-    <ul class="page d-flex align-items-center justify-content-center my-4 justify-content-md-between">
-      <li *ngFor="let clinic of clinics | paginate: { id:'clinic', itemsPerPage: itemsPerPage, currentPage: p, totalItems: 18}" class="mb-3">
+    <ul class="page d-flex align-items-center justify-content-center my-4 justify-content-md-between p-0">
+      <li *ngFor="let clinic of clinics | paginate: { id:'clinic', itemsPerPage: itemsPerPage, currentPage: p, totalItems: 18}" class="mb-3 mx-2">
         <app-clinic  [clinic]="clinic.name" [img]="clinic.picture" [routerLink]="['/allclinics', clinic._id]"></app-clinic>
       </li>
     </ul>

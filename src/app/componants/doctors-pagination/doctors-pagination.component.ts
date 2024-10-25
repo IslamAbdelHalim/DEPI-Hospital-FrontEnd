@@ -1,7 +1,7 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DoctorsService} from "../../services/doctors.service";
 import {faFacebook, faYoutube, faTelegram} from "@fortawesome/free-brands-svg-icons";
-import { error } from 'console';
 
 @Component({
   selector: 'app-doctors-pagination',
@@ -16,12 +16,14 @@ export class DoctorsPaginationComponent implements OnInit {
   @Output() dataLoaded: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   doctorsInDB: any;
-  page: number = 1;
+  p: number = 1;
+  itemsPerPage: number = 3;
   total: any;
-  constructor(private doctorsService: DoctorsService) { }
+  constructor(private doctorsService: DoctorsService, private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit() {
     this.getDocs();
+    this.setupResponsive();
   }
 
   getDocs() {
@@ -36,6 +38,20 @@ export class DoctorsPaginationComponent implements OnInit {
     });
   }
   pageChanged(event: any) {
-    this.page = event;
+    this.p = event;
+  }
+
+  setupResponsive(){
+    this.breakpointObserver.observe([Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium]).subscribe((result) => {
+      if (result.breakpoints[Breakpoints.XSmall]) {
+        this.itemsPerPage = 1
+      } else if (result.breakpoints[Breakpoints.Small]) {
+        this.itemsPerPage = 2;
+      } else {
+        this.itemsPerPage = 3;
+      }
+
+      this.p = 1;
+    })
   }
 }
