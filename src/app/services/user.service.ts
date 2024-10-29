@@ -26,4 +26,16 @@ export class UserService {
     const headers = { Authorization: `Bearer ${token}` };
     return this.http.get(`${this.apiURL}/user/${id}`, { headers });
   }
+
+  deleteUser(id: string) {
+    const token = this.authService.getToken();
+    const headers = { Authorization: `Bearer ${token}` };
+    return this.http.delete(`${this.apiURL}/user/${id}`, { headers });
+  }
+
+  updateUser(id: string, body: {}): Observable<any> {
+    const token = this.authService.getToken();
+    const headers = { Authorization: `Bearer ${token}` };
+    return this.http.patch(`${this.apiURL}/user/update/${id}`, body, { headers });
+  }
 }

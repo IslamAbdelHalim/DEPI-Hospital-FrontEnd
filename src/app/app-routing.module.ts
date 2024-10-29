@@ -15,6 +15,7 @@ import { ArticleHairComponent } from './componants/article-hair/article-hair.com
 import { ArticleNoseComponent } from './componants/article-nose/article-nose.component';
 import { ArticlePressureComponent } from './componants/article-pressure/article-pressure.component';
 import { InquiriesComponent } from './componants/inquiries/inquiries.component';
+import {UpdateUserComponent} from "./componants/update-user/update-user.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'allclinics', component: AllclinicsComponent},
   { path: 'allclinics/:id', component: EachClinicComponent},
   { path: 'user/:id', component: UserProfileComponent },
+  { path: 'user/update/:id', component: UpdateUserComponent},
   { path: 'doctors', component:DoctorsComponent },
   { path: 'booking', component: BookingComponent},
   { path: 'article',  component: ArticleComponent},

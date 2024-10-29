@@ -1,138 +1,59 @@
+<!--<app-spinner></app-spinner>-->
+<ngx-spinner type="ball-scale-multiple" bdColor = "rgba(0, 0, 0, 0.8)" size = "default" color = "#00363b"></ngx-spinner>
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 <!-- account section -->
-<div class="accountsection">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="labele">بياناتـــــى</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="eachlabel" for="fullname">الاسم كامل</label>
-            </div>
-            <div class="col-md-8">
-                <input class="inputuserprofile" type="text" [value]="userData.username" readonly>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="eachlabel" for="fullname">الاميل</label>
-            </div>
-            <div class="col-md-8">
-                <input class="inputuserprofile" type="text" [value]="userData.email" readonly>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="eachlabel" for="fullname">تاريخ الميلاد</label>
-            </div>
-            <div class="col-md-8">
-                <input class="inputuserprofile" type="text" [value]="userData.birthday | date: 'dd.MM.yy'" readonly>
-            </div>
-        </div>
-
+<header class="w-100">
+  <div class="container">
+    <div class="user d-flex flex-column align-items-center">
+      <div class="image">
+        <img src="assets/profile.png">
+      </div>
+      <div class="info">
+        <p class="h5 m-0">{{userData.username}}</p>
+        <p class="m-0">{{userData.email}}</p>
+        <a [href]="'user/update/' + userData._id" class="text-center"> تعديل البيانات<fa-icon [icon]="edit" class="ms-2"></fa-icon></a>
+      </div>
     </div>
+  </div>
+</header>
+
+<nav class="navbar navbar-expand navbar-dark ">
+  <div class="container d-flex align-items-center justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item mx-2">
+        <a class="nav-link fs-4" href="">التحاليل</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link fs-4 " href="">الاشعة</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link fs-4 active" href="">الحجوزات</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="books mb-4">
+  <div class="container">
+    <h2 class="text-end my-5">الحجوزات</h2>
+    <div *ngIf="bookings && bookings.length > 0 else noBooking" dir="rtl" class="row g-3">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let book of bookings">
+        <div class="card" >
+          <div class="card-body" dir="rtl">
+            <h4 class="card-title">حجز عيادة</h4>
+            <p class="h5 card-text">{{book.clinic}}</p>
+            <p class="h5 card-text">د.{{book.doctor}}</p>
+          </div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <p class="card-text text-center">الحالة : حجز</p>
+            <a href="" class="btn btn-primary">التفاصيل</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- password section -->
-<div class="passwordsection">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="labele">تعديل الرقم السرى</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="eachlabel" for="fullname">الرقم السرى الحالى</label>
-            </div>
-            <div class="col-md-8">
-                <input class="inputuserprofile" type="password">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="eachlabel" for="fullname">الرقم السرى الجديد</label>
-            </div>
-            <div class="col-md-8">
-                <input class="inputuserprofile" type="password">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label class="eachlabel" for="fullname">تاكيد الرقم السرى الجديد</label>
-            </div>
-            <div class="col-md-8">
-                <input class="inputuserprofile" type="password">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-
-            </div>
-            <div class="col-md-6">
-                <button class="updatebutton"> تحديث </button>
-                <button class="resetbutton"> الغاء </button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- appointment section -->
-<div class="appointmentsection">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="labele">حجزاتـــــى</div>
-            </div>
-        </div>
-        <div *ngIf="bookings && bookings.length > 0">
-            <div class="eachappointment" *ngFor="let appointment of bookings">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="eachlabel" for="fullname"> إسم المريض </label>
-                    </div>
-                    <div class="col-md-8">
-                        <input class="inputuserprofile" type="text" [value]="appointment.fullName" readonly>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="eachlabel" for="fullname">الاميل</label>
-                    </div>
-                    <div class="col-md-8">
-                        <input class="inputuserprofile" type="text" [value]="appointment.email" readonly>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="eachlabel" for="fullname">العيادة</label>
-                    </div>
-                    <div class="col-md-8">
-                        <input class="inputuserprofile" type="text" [value]="appointment.clinic" readonly>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="eachlabel" for="fullname">دكتور</label>
-                    </div>
-                    <div class="col-md-8">
-                        <input class="inputuserprofile" type="text" [value]="appointment.doctor" readonly>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label class="eachlabel" for="fullname">الحالة </label>
-                    </div>
-                    <div class="col-md-8">
-                        <input class="inputuserprofile" type="text" value="حجز" readonly>
-                    </div>
-                </div>
-                <div class="close d-flex justify-content-end">
-                    <button type="button" class="btn btn-danger m-3">الغاء الحجز</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<ng-template #noBooking>
+  <h3 class="text-center">لا يوجد لديك حجوزات</h3>
+</ng-template>

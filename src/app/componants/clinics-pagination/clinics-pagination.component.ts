@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
+import { NgxSpinnerService} from "ngx-spinner";
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ClinicsService} from "../../services/clinics.service";
 import {Clinic} from "../../models/clinic";
@@ -17,9 +18,10 @@ export class ClinicsPaginationComponent implements OnInit {
   itemsPerPage: number = 3
   totalItems: number = 18;
 
-  constructor(private clinicsService: ClinicsService, private cdr: ChangeDetectorRef, private breakpointObserver: BreakpointObserver) { }
+  constructor(private clinicsService: ClinicsService, private cdr: ChangeDetectorRef, private breakpointObserver: BreakpointObserver, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.getClinics();
     this.setupResponsive();
   }
@@ -29,9 +31,11 @@ export class ClinicsPaginationComponent implements OnInit {
       this.clinics = res.clinics;
       this.cdr.detectChanges();
       this.dataLoaded.emit(true);
+      this.spinner.hide();
     }, (error) => {
       console.log(error);
       this.dataLoaded.emit(false);
+      this.spinner.hide();
     })
   }
 

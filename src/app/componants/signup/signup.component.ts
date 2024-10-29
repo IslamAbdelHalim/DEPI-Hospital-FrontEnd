@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { ResponseModel } from '../../models/responseModel';
 import {AuthService} from "../../services/auth.service";
+import { DatePipe} from "@angular/common";
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
+  providers: [DatePipe]
 })
 export class SignupComponent {
   username: string | undefined;
@@ -21,7 +23,7 @@ export class SignupComponent {
   errPass: boolean = false;
 
 
-  constructor(private userService: UserService, private router: Router, private authService: AuthService) {}
+  constructor(private userService: UserService, private router: Router, private authService: AuthService, private datePipe: DatePipe) {}
 
   submit() {
     const body = {
@@ -29,7 +31,7 @@ export class SignupComponent {
       email: this.email,
       password: this.password,
       passwordConfirm: this.passwordConfirm,
-      birthday: this.birthday ? new Date(this.birthday) : undefined
+      birthday: this.datePipe.transform(this.birthday, "yyyy-MM-dd"),
     }
 
     this.userService.register(body).subscribe((res: ResponseModel) => {

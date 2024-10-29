@@ -1,0 +1,28 @@
+.container{
+  margin-bottom: 80px;
+}
+
+.testimonial {
+  background-color: #00a9a6;
+  max-height: 250px;
+  position: relative;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: -70px;
+}
+
+.carousel-indicators button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #0D7C66;
+}
+
+
+.img-fluid {
+  width: 60px;
+  border: 2px solid white;
+  border-radius: 50%;
+}

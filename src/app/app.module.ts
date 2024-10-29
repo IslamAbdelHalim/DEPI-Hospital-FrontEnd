@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CommonModule } from '@angular/common'
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -14,7 +15,7 @@ import { DepartmentesComponent } from './componants/departmentes/departmentes.co
 import { DoctorsComponent } from './componants/doctors/doctors.component';
 import { AppointmentsComponent } from './componants/appointments/appointments.component';
 import { InquiriesComponent } from './componants/inquiries/inquiries.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EachDepartmentComponent } from './componants/each-department/each-department.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -37,6 +38,8 @@ import { TimeConverterPipe } from './pipes/time-converter.pipe';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SignInDialogComponent } from './componants/sign-in-dialog/sign-in-dialog.component';
+import { UpdateUserComponent } from './componants/update-user/update-user.component';
+import { TestimonialsComponent } from './componants/testimonials/testimonials.component';
 
 
 @NgModule({
@@ -67,7 +70,9 @@ import { SignInDialogComponent } from './componants/sign-in-dialog/sign-in-dialo
     ArticlePressureComponent,
     BookingComponent,
     TimeConverterPipe,
-    SignInDialogComponent
+    SignInDialogComponent,
+    UpdateUserComponent,
+    TestimonialsComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,8 +84,11 @@ import { SignInDialogComponent } from './componants/sign-in-dialog/sign-in-dialo
     NgxPaginationModule,
     CommonModule,
     NgxSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync()

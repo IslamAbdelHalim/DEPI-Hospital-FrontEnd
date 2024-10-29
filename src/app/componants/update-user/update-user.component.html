@@ -1,0 +1,59 @@
+<ngx-spinner type="ball-scale-multiple" bdColor = "rgba(0, 0, 0, 0.8)" size = "default" color = "#00363b"></ngx-spinner>
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<header>
+  <h3 class="text-center">البيانات الشخصية</h3>
+</header>
+
+<div class="container mb-5">
+  <div class="update-info">
+    <form [formGroup]="updateInfo" class="d-flex justify-content-between mb-5">
+      <div class="changePhoto">
+        <h5 class="text-end p-2 text-opacity-50">الصورة الشخصية</h5>
+        <hr>
+        <div class="image d-flex flex-column align-items-center justify-content-center w-100 mb-4">
+          <img class="img-fluid mb-5" [src]="imageUrl" alt="profile picture">
+          <label class="custom-file" for="ImageUpload">
+            <button class="btn btn-outline-success" (click)="triggerFileInput()">تغيير الصورة الشخصية</button>
+          </label>
+        </div>
+        <input id="ImageUpload" type="file" class="d-none">
+      </div>
+      <div class="normal-info w-50 text-end p-5">
+        <h5>تعديل البيانات</h5><hr>
+        <div class="username">
+          <label class="form-label fw-bold" for="username">اسم المستخدم</label>
+          <input id="username" class="form-control" formControlName="username">
+        </div>
+        <div class="email">
+          <label class="form-label fw-bold" for="email">البريد الإلكترني</label>
+          <input id="email" class="form-control" formControlName="email" >
+        </div>
+        <div class="phone">
+          <label class="form-label fw-bold" for="phone">رقم الهاتف</label>
+          <input id="phone" class="form-control" formControlName="phone" >
+        </div>
+        <div class="birthday">
+          <label class="form-label fw-bold" for="birthday"> تاريخ الميلاد</label>
+          <input id="birthday" class="form-control" formControlName="birthday" [value]="userDate.birthday | date: 'dd-MM-yyy'">
+        </div>
+      </div>
+    </form>
+    <button type="button" class="btn btn-danger btn-lg me-3" (click)="confirm()">حذف</button>
+    <button type="button" class="btn btn-primary btn-lg" (click)="update()">تعديل</button>
+  </div>
+</div>
+
+<div *ngIf="dialog">
+  <div class="overlay w-100"></div>
+  <div class="dialog" dir="rtl">
+    <div class="head d-flex align-items-center justify-content-between">
+      <h2>تسجيل دخول</h2>
+      <h5 class="close" (click)="this.dialog=false">X</h5>
+    </div>
+    <hr>
+    <p class="my-4">هل انت متأكد من انك تريد حذف الحساب</p>
+    <hr>
+    <button type="button" (click)="delete()" class="btn btn-primary"> تأكيد</button>
+    <button type="button" (click)="this.dialog=false" class="btn btn-danger me-3"> الغاء</button>
+  </div>
+</div>

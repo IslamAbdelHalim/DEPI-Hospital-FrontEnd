@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router'
 import { FormsModule } from '@angular/forms';
 import { ClinicsService } from '../../services/clinics.service';
@@ -19,9 +20,10 @@ export class AllclinicsComponent implements OnInit{
   totalItems: number = 18;
   name: string = '';
 
-  constructor(private clinicService: ClinicsService, private router: Router, private breakpointsObservable: BreakpointObserver) {}
+  constructor(private clinicService: ClinicsService, private router: Router, private breakpointsObservable: BreakpointObserver, private spinner: NgxSpinnerService) {}
 
   ngOnInit(): void {
+    this.spinner.show();
     this.getClinics();
     this.setupResponsive();
   }
@@ -30,6 +32,7 @@ export class AllclinicsComponent implements OnInit{
     this.clinicService.getClinics().subscribe((res) => {
       this.clinics = res.clinics;
       this.allClinics = res.clinics;
+      this.spinner.hide();
     })
   }
 

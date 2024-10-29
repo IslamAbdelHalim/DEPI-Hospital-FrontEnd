@@ -1,4 +1,5 @@
 import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { DoctorsService} from "../../services/doctors.service";
 import {faFacebook, faYoutube, faTelegram} from "@fortawesome/free-brands-svg-icons";
@@ -19,9 +20,10 @@ export class DoctorsPaginationComponent implements OnInit {
   p: number = 1;
   itemsPerPage: number = 3;
   total: any;
-  constructor(private doctorsService: DoctorsService, private breakpointObserver: BreakpointObserver) { }
+  constructor(private doctorsService: DoctorsService, private breakpointObserver: BreakpointObserver, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.getDocs();
     this.setupResponsive();
   }
@@ -32,10 +34,12 @@ export class DoctorsPaginationComponent implements OnInit {
       this.doctorsInDB = response.doctors;
       this.total = this.doctorsInDB.length;
       this.dataLoaded.emit(true);
+      this.spinner.hide();
     }, (error) => {
-      console.log('error fetching data');
-      this.dataLoaded.emit(false)
-    });
+        console.log('error fetching data');
+        this.dataLoaded.emit(false)
+        this.spinner.hide();
+      });
   }
   pageChanged(event: any) {
     this.p = event;

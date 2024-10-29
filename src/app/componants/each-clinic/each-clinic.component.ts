@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NgxPaginationModule } from "ngx-pagination";
 import { ClinicsService} from "../../services/clinics.service";
 import { Clinic} from "../../models/clinic";
 import { Doctor} from "../../models/doctor";
 import {BookingService} from "../../services/booking.service";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-each-clinic',
@@ -20,9 +22,11 @@ export class EachClinicComponent implements OnInit{
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private clinicsService: ClinicsService,
-    private bookingService: BookingService,) { }
+    private bookingService: BookingService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.activatedRoute.params.subscribe(params => {
       const id = params['id'];
       this.getClinic(id);
@@ -33,6 +37,7 @@ export class EachClinicComponent implements OnInit{
     this.clinicsService.getClinic(id).subscribe((response: any) => {
       this.clinic = response.clinic[0];
       this.doctors = this.clinic!.doctors;
+      this.spinner.hide()
     });
   }
 
